@@ -1,5 +1,6 @@
-class Trend < ActiveRecord::Base
-
+class Style < ActiveRecord::Base
+  has_and_belongs_to_many :items
+  
   def self.find
     url = "http://api.nytimes.com/svc/mostpopular/v2/mostemailed/fashion/30?offset=20&api-key=3f2ea559f5dff249d1ab987e6d22b902:4:69398956"
     response = HTTParty.get(url)

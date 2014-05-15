@@ -1,0 +1,4 @@
+class FashionistasController < ApplicationController 
+
+
+end

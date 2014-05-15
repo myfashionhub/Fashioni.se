@@ -156,7 +156,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   font-awesome-sass
-  httparty
+  httparty (~> 0.13.1)
   jbuilder (~> 2.0)
   jquery-rails
   pg

@@ -1,0 +1,12 @@
+Utilize shopstyle and hearst API
+
+* Scope and feature:
+- User sign up and provide their style, clothing size, budget
+- Give user suggestions about five latest trends, what to wear/buy (Hearst API. Age range determines which mags to search)
+- Allow user to search for item via shopstyle (narrowed down to their size, price range)
+- Allow user to save item to closet/wishlist
+
+* Hearst brands:
+- Elle: women 18-49
+
+http://developer.hearst.com/io-docs

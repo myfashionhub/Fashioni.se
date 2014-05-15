@@ -1,0 +1,19 @@
+Key: 3f2ea559f5dff249d1ab987e6d22b902:4:69398956
+pw: N1
+
+http://api.nytimes.com/svc/mostpopular/{version}/{resource-type}/{section}[/share-types]/{time-period}[.response-format]?api-key={your-API-key}
+
+resource-type: mostemailed | mostshared | mostviewed
+section:       all-sections | One or more section names, separated by semicolons
+response-format: default to json
+time-period    : Number of days: 1 | 7 | 30
+share-types    : (mostshared requests only) One or more types, separated by 
+                 semicolons:
+digg | email | facebook | mixx | myspace |
+permalink | timespeople | twitter | yahoobuzz
+
+offset         : The first 20 results are shown by default. To page through the results, set offset to the appropriate value (e.g., offset=20 displays results 21–40).
+
+MY URL:
+
+http://api.nytimes.com/svc/mostpopular/v2/mostviewed/fashion/30?offset=20&api-key=3f2ea559f5dff249d1ab987e6d22b902:4:69398956
