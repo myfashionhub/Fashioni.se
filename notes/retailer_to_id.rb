@@ -40,6 +40,13 @@ vintage_array = [{:id=>"19", :name=>"bluefly"}, {:id=>"22", :name=>"anthropologi
 
 designer_array = [{:id=>"21", :name=>"shopbop"}, {:id=>"8", :name=>"bloomingdale's"}, {:id=>"427", :name=>"theoutnet"}, {:id=>"1467", :name=>"gilt"}, {:id=>"130", :name=>"michael kors"}, {:id=>"357", :name=>"bcbgmaxazria"}, {:id=>"27", :name=>"net-a-porter"}]
 
-
+#size code
+sizes = [
+  {xxs: '79'},
+  {xs:  '81'},
+  {s:   '83'},
+  {m:   '85'},
+  {l:   '87'},
+  {xl:  '89'}]
 
 

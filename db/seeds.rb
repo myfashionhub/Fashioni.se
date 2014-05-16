@@ -1,5 +1,8 @@
 Item.delete_all
+Fashionista.delete_all
+Style.delete_all
 
+myfashionhub = Fashionista.create(username: 'myfashionhub', email: 'nessa_m00re@yahoo.com', tagline: 'Fashion for life', pic_url: 'http://www.nessanguyen.com/images/nessa.jpg', size: 'xs', budget: '50', style_id: 1)
 
 # trendy_array = [{:id=>"108", :name=>"asos"}, {:id=>"483", :name=>"topshop"}, {:id=>"205", :name=>"mango"}, {:id=>"36", :name=>"forever 21"}, {:id=>"374", :name=>"dsw"}, {:id=>"249", :name=>"aldo"}, {:id=>"1465", :name=>"dorothy perkins"}]# 
 

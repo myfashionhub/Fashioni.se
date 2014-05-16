@@ -1,15 +1,15 @@
 require 'category'
-
 class Item < ActiveRecord::Base
   has_and_belongs_to_many :styles
 
+    
   def search
     categories = [ "womens-clothes",  "womens-athletic-clothes", "womens-pants", "womens-tops"]
     trendy_array = [{:id=>"108", :name=>"asos"}, {:id=>"483", :name=>"topshop"}, {:id=>"205", :name=>"mango"}, {:id=>"36", :name=>"forever 21"}, {:id=>"374", :name=>"dsw"}, {:id=>"249", :name=>"aldo"}, {:id=>"1465", :name=>"dorothy perkins"}]
-    
+
     retailer_ids = trendy_array.sample(3).map { |retailer| "fl=r#{retailer[:id]}" }
-    retailer = retailer_ids.join('&') 
-    size = "fl=s81"
+    retailer = retailer_ids.join('&')
+    size = "fl=s#{@size_code}"
 
     url = "http://api.shopstyle.com/api/v2/"
     id = "pid=uid9636-25025806-0"
