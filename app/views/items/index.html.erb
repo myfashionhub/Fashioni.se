@@ -1,0 +1,7 @@
+<% @items.each do |item| %>
+  <a href='<%= item.url %>'>
+    <img src='<%= item.image_url %>' />
+  </a>
+  <%= item.description %> | <%= item.price %>
+
+<% end %>  

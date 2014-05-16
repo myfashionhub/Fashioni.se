@@ -1,6 +1,6 @@
-class CreateFashionista < ActiveRecord::Migration
+class CreateFashionistas < ActiveRecord::Migration
   def change
-    create_table :fashionista do |t|
+    create_table :fashionistas do |t|
       t.string :style
       t.string :size
       t.references :item
