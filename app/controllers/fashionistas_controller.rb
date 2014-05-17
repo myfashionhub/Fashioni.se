@@ -9,8 +9,8 @@ class FashionistasController < ApplicationController
   end
 
   def create
-   
     @fashionista = Fashionista.create(fashionista_params)
+    binding.pry
     redirect_to "/fashionistas/#{@fashionista.id}"
   end
 
@@ -29,9 +29,22 @@ class FashionistasController < ApplicationController
 #                 DELETE /fashionistas/:id(.:format)      fashionistas#destroy
 
   private
-  def fashionista_params       
-    params.require(:fashionista).permit(:username, :tagline, :pic_url, :budget,
-      :size, :style)
+  
+  def fashionista_params
+    params_tagline = params.require(:fashionista).permit(:tagline)
+    if params_tagline.nil?
+      params_tagline = "Fashionizer"  
+    end     
+
+    params_pic  = params.require(:fashionista).permit(:pic_url)    
+    if params_pic.nil?
+      num = (1..6).sample
+      params_pic = "/assets/profile#{num}.jpg"
+    end 
+
+    params.require(:fashionista).permit(:username, :email, :budget,
+      :size, :style_id, :password)  
   end 
+
 end
 

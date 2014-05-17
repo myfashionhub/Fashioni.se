@@ -20,5 +20,4 @@ class Fashionista < ActiveRecord::Base
     end
   end
 
-
 end

@@ -50,3 +50,6 @@ sizes = [
   {xl:  '89'}]
 
 
+['trendy', 'business', 'active', 'sexy', 'vintage', 'designer'].each do |style|
+  Style.create(name: style)
+end  

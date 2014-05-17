@@ -37,7 +37,16 @@ class Item < ActiveRecord::Base
         )
     end  
 
+#result = HTTParty.get("http://api.shopstyle.com/api/v2/products?pid=uid9636-25025806-0&fl=r249&fl=r108&fl=r1465&fts=sundress&fl=s81")
+#    @packaged_results = result['products'].map do |item|
+#     { name: item['brandedName'], url: item['clickUrl'], 
+#       image_url: item['image']['sizes'].fetch('IPhone')['url'],
+#       price: "#{item['priceLabel']} #{item['currency']}" }
+#    end   #
 
+#    results = @packaged_results.map do |result|
+#      Item.create(description: result[:name], image_url: result[:image_url], url: result[:url], price: result[:price])
+#    end
 
   end
 
