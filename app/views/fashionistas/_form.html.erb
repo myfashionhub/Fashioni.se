@@ -1,0 +1,29 @@
+
+<%= form_for @fashionista do |f| %>
+  <%= f.label :username, "Username:" %>
+  <%= f.text_field :username %> <br/>
+
+  <%= f.label :email, "Email:" %>
+  <%= f.text_field :email %> <br/>
+
+  <%= f.label :tagline, "Tagline:" %>
+  <%= f.text_field :tagline %>  <br/>
+  
+  <%= f.label :pic_url, "Profile picture URL:" %>
+  <%= f.text_field :pic_url %>  <br/>  
+  
+  <%= f.label :budget, "Choose your budget range:" %> 
+  <%= f.select :budget, ['Under $50', '$50 - $100', 'Over $100'] %>   <br/>
+<%#:prompt => 'Select one' %> 
+
+  <%= f.label :size, "Select your clothing size:" %>  
+  <%= f.select :size, ['XXS (0)', 'XS (2)', 'S (4-6)', 'M (8-10)', 'L (12-14)', 'XL (16-18)'] %>  <br/>
+
+  <%= f.label :style_id, "Pick a style that most describes you:" %>
+  <%= f.collection_select :style_id, Style.all, :id, :name %> <br/>
+
+  <%= f.label :password, "Password:" %>
+  <%= f.password_field :password %> <br/>
+
+  <%= f.submit %>
+<% end %>

@@ -1,27 +1,7 @@
 
 <h2>Sign up to use Fashioni.se</h2>
 
-<%= form_for @fashionista do |f| %>
-  <%= f.label :username, "Userame:" %>
-  <%= f.text_field :username %>
-
-  <%= f.label :tagline, "Tagline:" %>
-  <%= f.text_field :tagline %>  
-  
-  <%= f.label :pic_url, "Profile picture URL:" %>
-  <%= f.text_field :pic_url %>
-  
-  <%= f.label :budget, "Budget range:" %> 
-  <%= f.select :budget, [ 'Under $50', '$50 - $100', 'Over $100' ], :prompt => 'Choose budget range' %>
-  
-  <%= f.label :size, "Clothing size:" %>  
-  <%= f.select :size, [ 'XXS (0)', 'XS (2)', 'S (4-6)', 'M (8-10)', 'L (12-14)', 'XL (16-18)' ], :prompt => 'Select your size' %>  
-
-  <%= f.label :style, "Style:" %>
-  <%= f.select :style, [ 'trendy', 'business', 'active', 'vintage', 'designer' ],   :prompt => 'Pick a style' %>
-
-  <%= f.submit "Create profile" %>
-<% end %>
+<%= render "form" %>
 
 <%# FORM HELPER http://api.rubyonrails.org/classes/ActionView/Helpers/FormHelper.html#method-i-radio_button #%>
 

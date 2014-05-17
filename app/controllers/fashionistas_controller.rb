@@ -1,13 +1,15 @@
 class FashionistasController < ApplicationController 
   def index
-    @fashionista = Fashionista.first
+    @fashionistas = Fashionista.all
   end
 
   def new
     @fashionista = Fashionista.new
+    
   end
 
   def create
+   
     @fashionista = Fashionista.create(fashionista_params)
     redirect_to "/fashionistas/#{@fashionista.id}"
   end
