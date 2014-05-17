@@ -3,19 +3,21 @@
  *= require_self
  */
 
+
+/* Fashionista new & edit form */
 .new_fashionista, .edit_fashionista {
   display: block;
   line-height: 2.2em;
   width: 360px;
 }
 
-.new_fashionista label {
+.new_fashionista label, .edit_fashionista label {
   float: left;
 }
 
-.new_fashionista input, .new_fashionista select {
+.new_fashionista input, .new_fashionista select,
+.edit_fashionista input, .edit_fashionista select {
   float: right;
-
 }
 
 

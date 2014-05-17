@@ -1,7 +1,8 @@
 
 <% @fashionistas.each do |fashionista| %>
-  <div>
+  <p>
   <%= fashionista.username %>, <%= fashionista.tagline %> <br/>
+  Fashionista id: <%= fashionista.id %>
   Style: <%= Style.find(fashionista.style_id).name.capitalize %>  
-  </div> 
+  </p> 
 <% end %>

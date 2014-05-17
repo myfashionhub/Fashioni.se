@@ -6,5 +6,19 @@
 
 <img src="<%= @fashionista.pic_url %>" class="profile" /><br/>
 
+<p>
 Tagline: <%= @fashionista.tagline %>  <br/>
 Style: <%= Style.find(@fashionista.style_id).name.capitalize %>
+</p>
+
+
+<a href="/fashionistas/<%= @fashionista.id %>/edit">
+  <button>Edit account</button>
+</a>  
+
+
+<form action='/fashionistas/<%= @fashionista.id %>' method='post'>
+  <%= token_tag %>
+  <input type='hidden' name='_method' value='delete'>
+  <button>Delete account</button>
+</form>

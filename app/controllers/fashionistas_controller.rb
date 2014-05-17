@@ -27,6 +27,10 @@ class FashionistasController < ApplicationController
     redirect_to "/fashionistas/#{@fashionista.id}"    
   end
 
+  def destroy
+    Fashionista.delete(params[:id])
+    redirect_to "/fashionistas"   
+  end
 
 #    fashionistas GET    /fashionistas(.:format)          fashionistas#index
 #                 POST   /fashionistas(.:format)          fashionistas#create
