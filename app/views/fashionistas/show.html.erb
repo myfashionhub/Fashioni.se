@@ -1,6 +1,10 @@
 
-<img src="<%= @fashionista.pic_url %>" /><br/>
+<h2>
+  <%= @fashionista.username %>'s profile <br/>
+</h2>
 
-<%= @fashionista.username %> | <%= @fashionista.email %><br/>
-<%= @fashionista.tagline %>  <br/>
-Style id: <%= @fashionista.style_id %>
+
+<img src="<%= @fashionista.pic_url %>" class="profile" /><br/>
+
+Tagline: <%= @fashionista.tagline %>  <br/>
+Style: <%= Style.find(@fashionista.style_id).name.capitalize %>

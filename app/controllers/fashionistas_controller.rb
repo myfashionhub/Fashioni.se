@@ -10,12 +10,21 @@ class FashionistasController < ApplicationController
 
   def create
     @fashionista = Fashionista.create(fashionista_params)
-    binding.pry
     redirect_to "/fashionistas/#{@fashionista.id}"
+  end
+
+  def edit
+    @fashionista = Fashionista.find(params[:id])
   end
 
   def show 
     @fashionista = Fashionista.find(params[:id])
+  end
+
+  def update
+    @fashionista = Fashionista.find(params[:id])
+    @fashionista.update(fashionista_params)
+    redirect_to "/fashionistas/#{@fashionista.id}"    
   end
 
 
@@ -42,8 +51,7 @@ class FashionistasController < ApplicationController
       params_pic = "/assets/profile#{num}.jpg"
     end 
 
-    params.require(:fashionista).permit(:username, :email, :budget,
-      :size, :style_id, :password)  
+    params.require(:fashionista).permit(:username, :email, :tagline, :pic_url, :budget, :size, :style_id, :password)  
   end 
 
 end
