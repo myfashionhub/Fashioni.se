@@ -91,10 +91,10 @@ table.form {
 /* Fashionista show page */
 .show {
   background-image: url('/assets/pattern.png');
-  height: 100%;
+  min-height: 100%;
   width: 100%;  
   position: absolute;
-  background-position: fixed;
+  background-attachment: scroll;
 }
 
 .col-md-10, .col-md-8 {

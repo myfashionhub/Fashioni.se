@@ -15,13 +15,15 @@ class ItemsController < ApplicationController
     size_code      = @fashionista.size_convert
     max            = @fashionista.budget_max
     term           = params[:search_term] 
-    @items = Item.search_api(term, retailers, size_code, max)    
+
+    @items = Item.search_api(term, retailers, size_code, max)
   end  
 
-#{}"http://api.shopstyle.com/api/v2/products?pid=uid9636-25025806-0&fl=r39&fl=r5&fl=r1512&fl=r4&fl=r374&fl=r1138&fts=leather+shorts&fl=s83&fl=p10:50"
-
-#{}"http://api.shopstyle.com/api/v2/products?pid=uid9636-25025806-0&fl=r39&fl=r5&fl=r1512&fl=r4&fl=r374&fl=r1138&fts=leather+skirt&fl=s83&fl=p10:50"
-
+  def save
+    new_item = Item.add(params[:shopstyle_id])
+    new_song.save
+    @current_listener.songs << new_song
+  end  
 end
 
 
