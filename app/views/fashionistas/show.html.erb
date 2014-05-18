@@ -1,34 +1,40 @@
+<div class="show">
 
+<div class="container"> 
 
-<div class="container">
-
-  <div class="col-md-2"> &nbsp; </div>
-
-  <div class="col-md-8"> 
+  <div class="col-md-10"> 
   <h2>
-    <%= @fashionista.username %>'s profile <br/>
+    <b><%= @fashionista.username %>'s profile <br/></b>
   </h2>
 
 
   <img src="<%= @fashionista.pic_url %>" class="profile" /><br/>
 
   <p>
-    Tagline: <%= @fashionista.tagline %>  <br/>
-    Style: <%= Style.find(@fashionista.style_id).name.capitalize %>
+    Tagline: <b><%= @fashionista.tagline %></b><br/>
+    Style: <b><%= Style.find(@fashionista.style_id).name.capitalize %></b>
   </p>
 
-
-  <a href="/fashionistas/<%= @fashionista.id %>/edit">
+  <a href="/fashionistas/<%= @fashionista.id %>/edit" class='button'>
     <button>Edit account</button>
   </a>  
 
 
-  <form action='/fashionistas/<%= @fashionista.id %>' method='post'>
+  <form action='/fashionistas/<%= @fashionista.id %>' method='post' class='button'>
     <%= token_tag %>
     <input type='hidden' name='_method' value='delete'>
     <button>Delete account</button>
   </form>
-  </div>
 
-  <div class="col-md-2"> &nbsp; </div>
+  
+  <h3><%= @fashionista.username %>'s closet</h3>
+  <%# @fashionista.items.sample(5) %>
+    <%#= %>
+  <%# end %>
+    
+  <div class="row"></div>
+  </div>
+ 
+</div>
+
 </div>

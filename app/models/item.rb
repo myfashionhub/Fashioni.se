@@ -3,7 +3,7 @@ class Item < ActiveRecord::Base
   has_and_belongs_to_many :styles
 
     
-  def search
+  def search_api
     categories = [ "womens-clothes",  "womens-athletic-clothes", "womens-pants", "womens-tops"]
     trendy_array = [{:id=>"108", :name=>"asos"}, {:id=>"483", :name=>"topshop"}, {:id=>"205", :name=>"mango"}, {:id=>"36", :name=>"forever 21"}, {:id=>"374", :name=>"dsw"}, {:id=>"249", :name=>"aldo"}, {:id=>"1465", :name=>"dorothy perkins"}]
 

@@ -1,6 +1,5 @@
-heroku config:set SHOPSTYLE_ID=''
+heroku config:set SHOPSTYLE_ID='uid9636-25025806-0'
 
-myfashionhub API key: uid9636-25025806-0
 
 API url:
 http://api.shopstyle.com/api/VERSION/METHOD_NAME?pid=YOUR_API_KEY&format=FORMAT&...

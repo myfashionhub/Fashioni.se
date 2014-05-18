@@ -37,17 +37,8 @@ class FashionistasController < ApplicationController
     redirect_to "/fashionistas"   
   end
 
-#    fashionistas GET    /fashionistas(.:format)          fashionistas#index
-#                 POST   /fashionistas(.:format)          fashionistas#create
-# new_fashionista GET    /fashionistas/new(.:format)      fashionistas#new
-#edit_fashionista GET    /fashionistas/:id/edit(.:format) fashionistas#edit
-#     fashionista GET    /fashionistas/:id(.:format)      fashionistas#show
-#                 PATCH  /fashionistas/:id(.:format)      fashionistas#update
-#                 PUT    /fashionistas/:id(.:format)      fashionistas#update
-#                 DELETE /fashionistas/:id(.:format)      fashionistas#destroy
 
-  private
-  
+  private  
   def fashionista_params
     params.require(:fashionista).permit(:username, :email, :tagline, :pic_url, :budget, :size, :style_id, :password)  
   end 

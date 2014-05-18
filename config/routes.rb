@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :fashionistas do
-    resources :items, except: [:edit]
+    resources :items, except: [:edit, :show] do
+      collection do
+        get 'search'
+      end  
+  end
   end
     
-  resources :styles, except: [:edit, :create]
+  get '/styles' => 'styles#index'
 end

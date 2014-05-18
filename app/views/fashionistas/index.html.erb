@@ -1,10 +1,28 @@
+<div class="show">
+  
+<div class="container">
 
-<% @fashionistas.each do |fashionista| %>
-  <p>
-  <a href="/fashionistas/<%= fashionista.id %>">
-    <%= fashionista.username %>
-  </a>, Fashionista #<%= fashionista.id %> <br/>
-  Tagline: <%= fashionista.tagline %> <br/>
-  Style: <%= Style.find(fashionista.style_id).name.capitalize %>  
-  </p> 
-<% end %>
+
+  <div class="col-md-8">
+    <h2>All fashionistas</h2>  
+
+    <% @fashionistas.each do |fashionista| %>
+    
+    <div class='all'>
+      <img src="<%= fashionista.pic_url %>">
+
+      <p>
+      <a href="/fashionistas/<%= fashionista.id %>">
+        <b><%= fashionista.username.upcase %></b></a>, 
+        fashionista #<%= fashionista.id %> <br/>
+        Tagline: <%= fashionista.tagline %> <br/>
+        Style: <%= Style.find(fashionista.style_id).name.capitalize %>  
+      </p> 
+
+      <div class="row"></div>
+    </div>      
+      <% end %>
+  </div>
+</div>
+
+</div>
