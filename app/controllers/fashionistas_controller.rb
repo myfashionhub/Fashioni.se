@@ -14,7 +14,6 @@ class FashionistasController < ApplicationController
                 'pic_url' => "/assets/profile#{num}.jpg"}
         
     @fashionista = Fashionista.create(fashionista_params.merge!(defaults))
-    binding.pry
     redirect_to "/fashionistas/#{@fashionista.id}"
   end
 
