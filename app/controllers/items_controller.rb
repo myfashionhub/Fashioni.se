@@ -4,11 +4,13 @@ class ItemsController < ApplicationController
   end
 
   def search
-
+    @items = Item.search_api(params(search_term))
+    redirect_to items_path()
   end  
 
   def new
   end
+
 end
 
 

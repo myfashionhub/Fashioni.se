@@ -4,28 +4,33 @@
   <h2>Trendy items this season: </h2>  
   <p>Click to search:</p>
 
-  <form action='' method='post'>
-    <input type='hidden' name='search_term' value='leather top'>
+  <form action='/fashionistas/<%= @fashionista.id%>/items/search' method='post'>
+    <%= token_tag %>
+    <input type='hidden' name='item[search_term]' value='leather top'>
     <button>Leather top</button>  
   </form>
 
-  <form action='' method='post'>
-    <input type='hidden' name='search_term' value='leather shorts'>
+  <form action='/fashionistas/<%= @fashionista.id%>/items/search' method='post'>
+    <%= token_tag %>
+    <input type='hidden' name='item[search_term]' value='leather shorts'>
     <button>Leather shorts</button>  
   </form>
 
-  <form action='' method='post'>
-    <input type='hidden' name='search_term' value='leather shorts'>
+  <form action='/fashionistas/<%= @fashionista.id%>/items/search' method='post'>
+    <%= token_tag %>
+    <input type='hidden' name='item[search_term]' value='leather skirt'>
     <button>Leather skirt</button>  
   </form>  
 
-  <form action='' method='post'>
-    <input type='hidden' name='search_term' value='fringe top'>
+  <form action='/fashionistas/<%= @fashionista.id%>/items/search' method='post'>
+    <%= token_tag %>
+    <input type='hidden' name='item[search_term]' value='fringe top'>
     <button>Fringe top</button>  
   </form>
 
-  <form action='' method='post'>
-    <input type='hidden' name='search_term' value='fringe dress'>
+  <form action='/fashionistas/<%= @fashionista.id%>/items/search' method='get'>
+    <%= token_tag %>
+    <input type='hidden' name='item[search_term]' value='fringe dress'>
     <button>Fringe dress</button>  
   </form>
 
