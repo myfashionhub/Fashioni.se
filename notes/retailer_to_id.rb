@@ -14,15 +14,12 @@ end
 
 
 # trend name array
-trendy_name = ["asos", "topshop", "mango", "forever 21", "dsw", "aldo", 
-  "dorothy perkins"]
-business_name = ["loft", "j.crew", "ann taylor", "lord & taylor", "aldo", "dsw", "baublebar"]
-casual_name = ["aeropostale", "gap", "alloy", "piperlime", "toms", "levi's"]
-active_name = ["tilly's", "athleta", "nike", "toms", "american eagle"]
-sexy_name = ["bebe", "guess", "juicy couture", "aldo", "victoria's secret", "vince camuto"]
-designer_name = ["shopbop", "bloomingdale's", "theoutnet", "gilt",
- "michael kors", "bcbgmaxazria", "net-a-porter"]  
-vintage_name = ["bluefly", "anthropologie", "urban outfitters", "modcloth", "madewell", "free people"]
+trendy_stores   = ["asos", "topshop", "mango", "forever 21", "dsw", "aldo", "dorothy perkins"]
+business_stores = ["loft", "j.crew", "ann taylor", "lord & taylor", "aldo", "dsw", "baublebar"]
+active_stores   = ["aeropostale", "gap", "alloy", "toms", "levi's", "tilly's", "american eagle"]
+sexy_stores     = ["bebe", "guess", "juicy couture", "aldo", "victoria's secret", "vince camuto"]
+vintage_stores  = ["bluefly", "anthropologie", "urban outfitters", "modcloth", "madewell", "free people"]
+designer_stores = ["shopbop", "bloomingdale's", "theoutnet", "gilt", "bcbgmaxazria", "net-a-porter"]  
 
 
 trendy_array = [{:id=>"108", :name=>"asos"}, {:id=>"483", :name=>"topshop"}, {:id=>"205", :name=>"mango"}, {:id=>"36", :name=>"forever 21"}, {:id=>"374", :name=>"dsw"}, {:id=>"249", :name=>"aldo"}, {:id=>"1465", :name=>"dorothy perkins"}]
@@ -50,6 +47,7 @@ sizes = [
   {xl:  '89'}]
 
 
+#seed styles
 ['trendy', 'business', 'active', 'sexy', 'vintage', 'designer'].each do |style|
   Style.create(name: style)
 end  

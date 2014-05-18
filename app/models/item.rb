@@ -2,34 +2,36 @@ require 'category'
 class Item < ActiveRecord::Base
   has_and_belongs_to_many :styles
 
-    
-  def search_api(term)
-    #categories = [ "womens-clothes",  "womens-athletic-clothes", "womens-pants", "womens-tops"]
-    term = term.gsub(' ','+')
 
-    retailer_ids = trendy_array.map { |retailer| "fl=r#{retailer[:id]}" }
-    retailer = retailer_ids.join('&')
-    size = "fl=s#{@size_code}"
-
-    url = "http://api.shopstyle.com/api/v2/"
+  def self.search_api(term, retailers, size_code, max)
     id = ENV.fetch('SHOPSTYLE_ID')
-    term = "jumpsuit"
-    term = term.gsub(' ', '+')
-    max = "75"
-    price = "fl=p5:#{max}"
-    url += "products?#{id}&#{retailer}&fts=#{term}&#{size}&#{price}"
 
-    result = HTTParty.get(url)
-    @packaged_results = result['products'].map do |item|
+    @url   = "http://api.shopstyle.com/api/v2/"
+    term  = term.gsub(' ','+')
+    size  = "fl=s#{size_code}"
+    price = "fl=p10:#{max}"
+    @url += "products?pid=#{id}&#{retailers}&fts=#{term}&#{size}&#{price}"
+
+    raw_result = HTTParty.get(url)
+    results = raw_result['products'].map do |item|
      { name:      item['brandedName'], 
        url:       item['clickUrl'], 
        image_url: item['image']['sizes'].fetch('IPhone')['url'],
        price:     "#{item['priceLabel']} #{item['currency']}"
      }
-    end   
+    end
 
-    results = @packaged_results.map do |result|
-      Item.create(
+    return results 
+  end
+  
+       
+  def self.url
+    @url
+  end  
+
+  def self.add  
+    results = packaged_results.map do |result|
+      self.create(
         description: result['name'], 
         image_url:   result['image_url'], 
         url:         result['url'], 
@@ -37,25 +39,8 @@ class Item < ActiveRecord::Base
         )
     end  
 
-#result = HTTParty.get("http://api.shopstyle.com/api/v2/products?pid=uid9636-25025806-0&fl=r249&fl=r108&fl=r1465&fts=sundress&fl=s81")
-#    @packaged_results = result['products'].map do |item|
-#     { name: item['brandedName'], url: item['clickUrl'], 
-#       image_url: item['image']['sizes'].fetch('IPhone')['url'],
-#       price: "#{item['priceLabel']} #{item['currency']}" }
-#    end   #
-
-#    results = @packaged_results.map do |result|
-#      Item.create(description: result[:name], image_url: result[:image_url], url: result[:url], price: result[:price])
-#    end
-
+  return results
   end
 
 end
 
-sizes = [
-  {xxs: '79'},
-  {xs:  '81'},
-  {s:   '83'},
-  {m:   '85'},
-  {l:   '87'},
-  {xl:  '89'}]

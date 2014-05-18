@@ -15,3 +15,4 @@ cat_raw['categories'].each do |category|
   end
 end  
 
+categories = [ "womens-clothes",  "womens-athletic-clothes", "womens-pants", "womens-tops"]

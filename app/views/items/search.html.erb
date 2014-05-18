@@ -1,48 +1,18 @@
 <div class="show">
   <div class="container">
+
     
-  <h2>Trendy items this season: </h2>  
-  <p>Click to search:</p>
+  <% @items.each do |item| %>
+  <div>
+  <img src='<%= item[:image_url] %>' height="150" />
+    
+  <a href='<%= item[:url] %>'>  
+  </a> <br/>
+  <%= item[:name] %> | <%= item[:price] %>
+  </div>
 
-  <form action='/fashionistas/<%= @fashionista.id%>/items/search' method='post'>
-    <%= token_tag %>
-    <input type='hidden' name='item[search_term]' value='leather top'>
-    <button>Leather top</button>  
-  </form>
+  <% end %>  
 
-  <form action='/fashionistas/<%= @fashionista.id%>/items/search' method='post'>
-    <%= token_tag %>
-    <input type='hidden' name='item[search_term]' value='leather shorts'>
-    <button>Leather shorts</button>  
-  </form>
-
-  <form action='/fashionistas/<%= @fashionista.id%>/items/search' method='post'>
-    <%= token_tag %>
-    <input type='hidden' name='item[search_term]' value='leather skirt'>
-    <button>Leather skirt</button>  
-  </form>  
-
-  <form action='/fashionistas/<%= @fashionista.id%>/items/search' method='post'>
-    <%= token_tag %>
-    <input type='hidden' name='item[search_term]' value='fringe top'>
-    <button>Fringe top</button>  
-  </form>
-
-  <form action='/fashionistas/<%= @fashionista.id%>/items/search' method='get'>
-    <%= token_tag %>
-    <input type='hidden' name='item[search_term]' value='fringe dress'>
-    <button>Fringe dress</button>  
-  </form>
-
-summer leather
-sundress
-summer denim
-fringe
-sandals
-cutout, bodycon
-print
-floral
-work/business
-
+  <div class="row">&nbsp;</div>
   </div>
 </div>

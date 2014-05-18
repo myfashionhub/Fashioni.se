@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :fashionistas do
     resources :items, except: [:edit, :update] do
       collection do
-        get 'search'
-        post 'search'
+        get 'search' 
+        post 'save'
       end  
   end
   end

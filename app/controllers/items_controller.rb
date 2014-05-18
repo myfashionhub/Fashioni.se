@@ -1,15 +1,26 @@
 class ItemsController < ApplicationController 
   def index
-    @items = Item.all
+    @fashionista = Fashionista.find(params[:fashionista_id])
+    @items = @fashionista.items.all
   end
-
-  def search
-    @items = Item.search_api(params(search_term))
-    redirect_to items_path()
-  end  
 
   def new
+    @fashionista = Fashionista.find(params[:fashionista_id])
   end
+
+  def search 
+    @fashionista   = Fashionista.find(params[:fashionista_id])
+    retailer_array = Style.map(@fashionista.style_id)
+    retailers = Style.extract_id(retailer_array) 
+    size_code      = @fashionista.size_convert
+    max            = @fashionista.budget_max
+    term           = params[:search_term] 
+    @items = Item.search_api(term, retailers, size_code, max)    
+  end  
+
+#{}"http://api.shopstyle.com/api/v2/products?pid=uid9636-25025806-0&fl=r39&fl=r5&fl=r1512&fl=r4&fl=r374&fl=r1138&fts=leather+shorts&fl=s83&fl=p10:50"
+
+#{}"http://api.shopstyle.com/api/v2/products?pid=uid9636-25025806-0&fl=r39&fl=r5&fl=r1512&fl=r4&fl=r374&fl=r1138&fts=leather+skirt&fl=s83&fl=p10:50"
 
 end
 
