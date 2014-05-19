@@ -1,19 +1,24 @@
 class FashionistasController < ApplicationController 
+
   def index
+    @fashionista = current_fashionista
     @fashionistas = Fashionista.all
   end
 
   def new
     @fashionista = Fashionista.new
-    
   end
+
 
   def create
     num = (1..6).to_a.sample
     defaults = {'tagline' => 'Fashionizer', 
                 'pic_url' => "/assets/profile#{num}.jpg"}
-        
-    @fashionista = Fashionista.create(fashionista_params.merge!(defaults))
+    if params.require(:fashionista).permit(:tagline, :pic_url).nil?  
+      @fashionista = Fashionista.create(fashionista_params.merge!(defaults))
+    else
+      @fashionista = Fashionista.create(fashionista_params)
+    end    
     redirect_to "/fashionistas/#{@fashionista.id}"
   end
 
@@ -39,7 +44,7 @@ class FashionistasController < ApplicationController
 
   private  
   def fashionista_params
-    params.require(:fashionista).permit(:username, :email, :tagline, :pic_url, :budget, :size, :style_id, :password)  
+    params.require(:fashionista).permit(:username, :email, :tagline, :pic_url, :budget, :size, :style_id, :password, :password_confirmation)  
   end 
 
 end

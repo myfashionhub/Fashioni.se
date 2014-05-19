@@ -68,9 +68,9 @@ table.form {
   text-align: center;
 }
 
-.form tr:nth-child(9n) td {
+.form tr:nth-child(10n) td { /* create button */
   padding-top: 10px;
-  text-align: right;
+  text-align: right; 
 }
 
 /* Fashionista index */

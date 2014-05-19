@@ -10,18 +10,28 @@
 
 
 <div class="container">
+  <%= form_tag sessions_path do %>
+    <%= label_tag :email, "Email" %>
+    <%= text_field_tag :email %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>  
+    <%= submit_tag "Sign in" %>
+  <% end %>
+
+  <!--
   <form class='form-signin' id='login'>
     <h3 class='form-signin-heading'>
       Log in or <a href="/fashionistas/new">Sign up</a>
     </h3>  
-
-    <input type='email' name='[fashionista]username' placeholder='Username' class='form-control'>
+   
+    <input type='text' name='[fashionista]username' placeholder='Username' class='form-control'>
     <div class="row">&nbsp;</div>
     <input type='password' name='[fashionista]password' placeholder='Password' class='form-control'>
-
+    
     <div class="row">&nbsp;</div>
     <button class='btn btn-lg btn-primary btn-block'>Log in</button>
   </form>
+-->
 
 </div>
 

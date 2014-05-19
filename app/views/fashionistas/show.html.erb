@@ -14,7 +14,8 @@
     Tagline: <b><%= @fashionista.tagline %></b><br/>
     Style: <b><%= Style.find(@fashionista.style_id).name.capitalize %></b>
   </p>
-
+  
+<!--
   <a href="/fashionistas/<%= @fashionista.id %>/edit" class='button'>
     <button>Edit account</button>
   </a>  
@@ -25,7 +26,7 @@
     <input type='hidden' name='_method' value='delete'>
     <button>Delete account</button>
   </form>
-
+-->
   
   <h3><%= @fashionista.username %>'s closet</h3>
   <%# @fashionista.items.sample(5) %>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root                 'sessions#index'
+  post   'sessions' => 'sessions#create'
+  delete 'sessions' => 'sessions#destroy'
 
   resources :fashionistas do
     resources :items, except: [:edit, :update] do
@@ -10,5 +12,7 @@ Rails.application.routes.draw do
   end
   end
     
-  get '/styles' => 'styles#index'
+  get 'styles' => 'styles#index'
+  get 'profiles' => 'profiles#index'
+
 end
