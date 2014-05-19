@@ -9,7 +9,12 @@
 </head>
 <body>
 
-<%= yield %>
+  <% if flash %>
+    <%= flash.now[:alert] %>
+    <%= flash.now[:notice] %>
+  <% end %>
+
+  <%= yield %>
 
 </body>
 </html>

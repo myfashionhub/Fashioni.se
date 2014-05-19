@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if fashionista && fashionista.authenticate(params[:password])
       session[:fashionista_id] = fashionista.id
 
-      redirect_to '/fashionistas', notice: "Signed in as #{fashionista.username}"
+      redirect_to '/profiles', notice: "Signed in as #{fashionista.username}"
     else 
       redirect_to root_path, alert: "Log in failed"
     end  
