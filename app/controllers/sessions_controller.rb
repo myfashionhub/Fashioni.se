@@ -1,9 +1,11 @@
 class SessionsController < ApplicationController 
+  
   def index
   end
 
   def create
     fashionista = Fashionista.find_by(email: params[:email])
+
     if fashionista && fashionista.authenticate(params[:password])
       session[:fashionista_id] = fashionista.id
 

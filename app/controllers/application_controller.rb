@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_fashionista
 
   def current_fashionista 
-    Fashionista.find(session[:fashionista_id]) if session[:fashionista_id]
+    #Fashionista.find(session[:fashionista_id]) if session[:fashionista_id]
   end
 
   def authorize  

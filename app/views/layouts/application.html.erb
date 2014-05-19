@@ -10,8 +10,10 @@
 <body>
 
   <% if flash %>
+  <div class="alert">
     <%= flash.now[:alert] %>
     <%= flash.now[:notice] %>
+  </div>  
   <% end %>
 
   <%= yield %>

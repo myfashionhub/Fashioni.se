@@ -1,0 +1,12 @@
+  
+<div class="nav">
+  <% if current_fashionista %>
+    <%= link_to "Your profile", '/profiles', method: :get %> |
+    <%= link_to "Log out", sessions_path, method: :delete %> |
+    <%= link_to "All fashionistas", '/fashionistas', method: :get %>
+  <% else %>
+    <%= link_to "Log in", root_path, method: :get %> | 
+    <%= link_to "All styles", '/styles', method: :get %> |
+    <%= link_to "All fashionistas", '/fashionistas', method: :get %>
+  <% end %>
+</div>

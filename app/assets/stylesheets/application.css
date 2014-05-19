@@ -41,6 +41,84 @@ body {
   border-radius: 5px;
 }
 
+input#email, input#password {
+  display: block;
+  width: 90%;
+  margin: 20px auto;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+input#email:focus, input#password:focus{
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+#login.form-signin input[type='submit'] {
+  display: block;
+  padding: 6px 12px;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+#login.form-signin input[type='submit']:focus,
+#login.form-signin input[type='submit']:active:focus,
+#login.form-signin input[type='submit'].active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+#login.form-signin input[type='submit']:hover,
+#login.form-signin input[type='submit']:focus {
+  color: #333;
+  text-decoration: none;
+}
+
+#login.form-signin input[type='submit'] {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+#login.form-signin input[type='submit']:hover,
+#login.form-signin input[type='submit']:focus,
+#login.form-signin input[type='submit']:active,
+#login.form-signin input[type='submit'].active {
+  color: #fff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+
+#login.form-signin input[type='submit']:active,
+#login.form-signin input[type='submit'].active {
+  background-image: none;
+}
+
 
 /* Fashionista new & edit form */
 table.form {
@@ -68,16 +146,16 @@ table.form {
   text-align: center;
 }
 
-.form tr:nth-child(10n) td { /* create button */
+.confirm { /* create button */
   padding-top: 10px;
   text-align: right; 
 }
 
-/* Fashionista index */
+/* Fashionista all/index */
 
 .col-md-8 h2 {
   font-weight: bold;
-  margin:  30px 0 20px 40px;
+  margin:  60px 0 20px 40px;
   font-size: 35px;
 }
 
@@ -113,6 +191,7 @@ img.profile {
 
 h2, .show h3 {
   font-family: 'Special Elite', cursive;
+  margin-top: 60px;
 }
 
 .show p {
@@ -126,7 +205,8 @@ form.button {
   margin-left: 10px;
 }
 
-button {
+button, 
+.form .confirm input /* edit/new form button */ {
   background-image: -webkit-linear-gradient(top, #f2dede 0%, #d990a3 100%);
   background-image:         linear-gradient(to bottom, #f2dede 0%, #d990a3 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff2d6ca2', GradientType=0);
@@ -138,20 +218,23 @@ button {
   line-height: 1.33;
   border-radius: 6px;
 }
-button:hover,
-button:focus {
+
+button:hover, button:focus 
+.confirm input[type='submit']:hover, /* not working */
+.confirm input[type='submit']:focus {
   background-color: #d990a3;
   background-position: 0 -15px;
 }
-button:active,
-button.active {
+button:active, button.active 
+.confirm input[type='submit']:active {
   background-color: #d990a3;
   border-color: #f3e0e0;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
           box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);  
 }
 
-button {
+button, 
+.confirm input[type='submit'] {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
           box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
@@ -163,6 +246,7 @@ a.button {
 
 a.button:hover {
   color: #333;
+  text-decoration: none;
 }
 
 
@@ -204,6 +288,32 @@ a.button:hover {
   height: 10px;
 }
 
+
+/* Navigation & alert */
+.alert {
+  z-index: 1;
+  position: absolute;
+  background: transparent;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  font-style: italic;
+}
+
+.nav {
+  z-index: 2;
+  position: absolute;
+  background: transparent;
+  width: 380px;
+  margin: 5px 0 0 65%; /* float right */
+  padding: 5px;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.nav a {
+  color: #444;
+}
 
 /* Footer
 #footer {

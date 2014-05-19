@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   def search 
     @fashionista   = Fashionista.find(params[:fashionista_id])
     retailer_array = Style.map(@fashionista.style_id)
-    retailers = Style.extract_id(retailer_array) 
+    retailers      = Style.extract_id(retailer_array) 
     size_code      = @fashionista.size_convert
     max            = @fashionista.budget_max
     term           = params[:search_term] 
@@ -21,8 +21,8 @@ class ItemsController < ApplicationController
 
   def save
     new_item = Item.add(params[:shopstyle_id])
-    new_song.save
-    @current_listener.songs << new_song
+    new_item.save
+    current_fashionista.items << new_item
   end  
 end
 

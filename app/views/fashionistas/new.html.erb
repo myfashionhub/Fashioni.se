@@ -5,8 +5,8 @@
   <div class="col-md-8">
     <h2>Sign up to use Fashioni.se</h2>
 
+<%= form_for @fashionista do |f| %>
 <table class='form'>
-  <%= form_for @fashionista do |f| %>
   <tr>
     <td><%= f.label :username, "Username:" %></td>
     <td><%= f.text_field :username %> </td>
@@ -65,8 +65,11 @@
   </tr>
 
   <tr>
-    <td colspan='2'><%= f.submit %></td>
+    <td colspan='2' class='confirm'>
+      <%= f.submit "Create profile" %>
+    </td>
   </tr>
+</table>  
 <% end %>
 
   </div>

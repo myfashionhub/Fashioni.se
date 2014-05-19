@@ -4,13 +4,14 @@ class Item < ActiveRecord::Base
 
 
   def self.search_api(term, retailers, size_code, max)
+    url      = "http://api.shopstyle.com/api/v2/"
     id = ENV.fetch('SHOPSTYLE_ID')
-
-    url   = "http://api.shopstyle.com/api/v2/"
-    term  = term.gsub(' ','+')
-    size  = "fl=s#{size_code}"
-    price = "fl=p10:#{max}"
-    url += "products?pid=#{id}&#{retailers}&fts=#{term}&#{size}&#{price}"
+    term     = term.gsub(' ','+')
+    size     = "fl=s#{size_code}"
+    price    = "fl=p10:#{max}"
+    category = "products"
+    
+    url += "#{category}?pid=#{id}&#{retailers}&fts=#{term}&#{size}&#{price}"
 
     raw_result = HTTParty.get(url)
     results = raw_result['products'].map do |item|

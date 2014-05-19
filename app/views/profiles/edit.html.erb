@@ -1,6 +1,14 @@
+<div class="show">
 
+<%= render '/fashionistas/nav' %>
+
+<div class="container">
+
+  <div class="col-md-8">
+    <h2>Edit profile</h2>
+
+<%= form_for current_fashionista do |f| %>   
 <table class='form'>
-  <%= form_for @fashionista do |f| %>
   <tr>
     <td><%= f.label :username, "Username:" %></td>
     <td><%= f.text_field :username %> </td>
@@ -55,8 +63,15 @@
 
   <tr>
     <td colspan='2' class='confirm'>
-      <%= f.submit %>
+      <%= f.submit 'Update profile' %>
     </td>
   </tr>
-<% end %>
+
 </table>
+<% end %>
+
+  </div>
+
+</div>  
+
+</div>

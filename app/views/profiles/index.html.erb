@@ -1,7 +1,8 @@
 <div class="show">
 
-<div class="container"> 
+<%= render "/fashionistas/nav" %>
 
+<div class="container"> 
   <div class="col-md-10"> 
   <h2>
     <b><%= current_fashionista.username %>'s profile <br/></b>
@@ -15,8 +16,8 @@
     Style: <b><%= Style.find(current_fashionista.style_id).name.capitalize %></b>
   </p>
 
-  <a href="/fashionistas/<%= current_fashionista.id %>/edit" class='button'>
-    <button>Edit account</button>
+  <a href="/profiles/edit" class='button'>
+    <button>Edit profile</button>
   </a>  
 
 
@@ -27,7 +28,7 @@
   </form>
 
   
-  <h3><%= current_fashionista.username %>'s closet</h3>
+  <h3>Your closet</h3>
   <%# @fashionista.items.sample(5) %>
     <%#= %>
   <%# end %>

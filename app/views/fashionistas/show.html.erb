@@ -1,5 +1,8 @@
 <div class="show">
 
+<%= render "/fashionistas/nav" %>
+
+
 <div class="container"> 
 
   <div class="col-md-10"> 
@@ -15,21 +18,9 @@
     Style: <b><%= Style.find(@fashionista.style_id).name.capitalize %></b>
   </p>
   
-<!--
-  <a href="/fashionistas/<%= @fashionista.id %>/edit" class='button'>
-    <button>Edit account</button>
-  </a>  
-
-
-  <form action='/fashionistas/<%= @fashionista.id %>' method='post' class='button'>
-    <%= token_tag %>
-    <input type='hidden' name='_method' value='delete'>
-    <button>Delete account</button>
-  </form>
--->
-  
+ 
   <h3><%= @fashionista.username %>'s closet</h3>
-  <%# @fashionista.items.sample(5) %>
+  <%# @fashionista.items.all.each %>
     <%#= %>
   <%# end %>
     
