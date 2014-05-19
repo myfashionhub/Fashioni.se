@@ -4,17 +4,17 @@
   <h2>Trendy items this season: </h2>  
   <p>Click to search:</p>
 
-  <form action='/fashionistas/<%= @fashionista.id %>/items/search' method='get'>
+  <form action='/profiles/items/search' method='get'>
     <input type='text' name='search_term' placholder='fringe top'>
     <button>Search</button>  
   </form>
 
-  <form action='/fashionistas/<%= @fashionista.id %>/items/search' method='get'>
+  <form action='/profiles/items/search' method='get'>
     <input type='hidden' name='search_term' value='leather top'>
     <button>Leather top</button>  
   </form>
 
-  <form action='/fashionistas/<%= @fashionista.id %>/items/search' method='get'>
+  <form action='/profiles/items/search' method='get'>
     <input type='hidden' name='search_term' value='leather shorts'>
     <button>Leather shorts</button>  
   </form>

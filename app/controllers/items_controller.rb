@@ -5,11 +5,11 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @fashionista = Fashionista.find(params[:fashionista_id])
+    @fashionista = current_fashionista
   end
 
   def search 
-    @fashionista   = Fashionista.find(params[:fashionista_id])
+    @fashionista   = current_fashionista
     retailer_array = Style.map(@fashionista.style_id)
     retailers      = Style.extract_id(retailer_array) 
     size_code      = @fashionista.size_convert
