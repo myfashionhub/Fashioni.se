@@ -10,17 +10,15 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-config.serve_static_assets = true
-config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
-config.assets.compile = true
+  config.serve_static_assets = true
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
+  config.assets.compile = true
 
   #config.serve_static_assets = false
-
-  config.assets.js_compressor = :uglifier
-
   #config.assets.compile = false
 
   config.assets.digest = true
+  config.assets.js_compressor = :uglifier
 
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'

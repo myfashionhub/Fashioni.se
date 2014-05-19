@@ -22,7 +22,7 @@ class Style < ActiveRecord::Base
   def self.map(id)
     retailer_array = nil
     case id
-      when 1   
+    when 1   
   retailer_array = [{:id=>"108", :name=>"asos"}, 
                 {:id=>"483", :name=>"topshop"}, 
                 {:id=>"205", :name=>"mango"}, 
@@ -31,7 +31,7 @@ class Style < ActiveRecord::Base
                 {:id=>"249", :name=>"aldo"}, 
                 {:id=>"1465", :name=>"dorothy perkins"}]
 
-      when 2   
+    when 2   
   retailer_array = [{:id=>"39", :name=>"loft"}, 
                     {:id=>"5", :name=>"j.crew"}, 
                     {:id=>"1512", :name=>"j.crew"}, 
@@ -39,7 +39,7 @@ class Style < ActiveRecord::Base
                     {:id=>"374", :name=>"dsw"}, 
                     {:id=>"1138", :name=>"baublebar"}]
 
-      when 3   
+    when 3   
   retailer_array = [{:id=>"40", :name=>"aeropostale"}, 
                   {:id=>"41", :name=>"american eagle"},  
                   {:id=>"13", :name=>"gap"},
@@ -48,7 +48,7 @@ class Style < ActiveRecord::Base
                   {:id=>"857", :name=>"toms"}, 
                   {:id=>"992", :name=>"levi's"}]
 
-      when 4   
+    when 4   
   retailer_array = [{:id=>"32", :name=>"bebe"}, 
                 {:id=>"35", :name=>"guess"}, 
                 {:id=>"117", :name=>"guess"}, 
@@ -57,7 +57,7 @@ class Style < ActiveRecord::Base
                 {:id=>"38", :name=>"victoria's secret"}, 
                 {:id=>"832", :name=>"vince camuto"}] 
 
-      when 5   
+    when 5   
   retailer_array = [{:id=>"19", :name=>"bluefly"}, 
                    {:id=>"22", :name=>"anthropologie"}, 
                    {:id=>"29", :name=>"urban outfitters"}, 
@@ -65,7 +65,7 @@ class Style < ActiveRecord::Base
                    {:id=>"720", :name=>"madewell"}, 
                    {:id=>"31", :name=>"free people"}] 
 
-      when 6   
+    when 6   
   retailer_array = [{:id=>"21", :name=>"shopbop"}, 
                     {:id=>"8", :name=>"bloomingdale's"}, 
                     {:id=>"427", :name=>"theoutnet"}, 
