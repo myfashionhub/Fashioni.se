@@ -15,11 +15,14 @@
     </a> <%= item[:price] %>
   </p>
 
-  <p><a href="/save">Save to closet</a></p>
-  </div>
+  <form action='/profiles/items/save' method='post'>
+    <%= token_tag %>
+    <input type='hidden' name='shopstyle_id' value='<%= item[:shopstyle_id] %>'>
+    <input type='submit' value='Save to closet'>
+  </form>
 
   <% end %>  
+  </div>
 
   <div class="row">&nbsp;</div>
-  </div>
 </div>

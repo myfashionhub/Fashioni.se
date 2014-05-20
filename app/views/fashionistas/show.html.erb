@@ -1,6 +1,6 @@
 <div class="show">
 
-<%= render "/fashionistas/nav" %>
+<%= render "nav" %>
 
 
 <div class="container"> 
@@ -20,9 +20,9 @@
   
  
   <h3><%= @fashionista.username %>'s closet</h3>
-  <%# @fashionista.items.all.each %>
-    <%#= %>
-  <%# end %>
+  <% @fashionista.items.each do |item| %>
+    <img src="<%= item.image_url %>" class='thumbnail' />
+  <% end %>
     
   <div class="row"></div>
   </div>

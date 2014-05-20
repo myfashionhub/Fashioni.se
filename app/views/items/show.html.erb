@@ -1,0 +1,34 @@
+<div class="show">
+
+<div class="nav">
+  <a href="/profiles">
+    Back to profile
+  </a>  
+</div>
+
+<div class="container">
+
+  <div class="col-md-8">
+
+  <h3>
+    <a href='<%= @item.url %>'>
+      <%= @item.description %>  
+    </a>
+  </h3>  
+ 
+
+  <div class='item_show'>
+    <img src='<%= @item.image_url %>' />
+
+    <p><%= @item.price %></p>
+
+  <form action='/profiles/items/<%= @item.id %>' method='post'>
+    <%= token_tag %>
+    <input type='hidden' name='_method' value='delete'>
+    <input type='submit' value='Remove from closet' class='button'>
+  </form>
+  </div>
+
+  </div>
+</div>
+</div>

@@ -33,9 +33,11 @@
 
   
   <h3>Your closet</h3>
-  <%# @fashionista.items.sample(5) %>
-    <%#= %>
-  <%# end %>
+  <% current_fashionista.items.each do |item| %>
+    <a href='/profiles/items/<%= item.id %>'>
+      <img src="<%= item.image_url %>" class='thumbnail' />
+    </a>
+  <% end %>
     
   <div class="row"></div>
   </div>

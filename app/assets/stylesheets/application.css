@@ -191,9 +191,12 @@ img.profile {
 
 h2, .show h3 {
   font-family: 'Special Elite', cursive;
-  margin-top: 60px;
 }
 
+h2 {
+  margin-top: 60px;
+}
+  
 .show p {
   font-family: 'Sanchez', serif;
 }
@@ -259,7 +262,7 @@ a.button:hover {
   margin: 15px 20px 0 20px;
   float: left;
   width: 200px;
-  height: 280px;
+  height: 300px;
 }
 
 .img_frame {
@@ -288,6 +291,19 @@ a.button:hover {
   height: 10px;
 }
 
+
+/* Fashionista profile page */
+img.thumbnail {
+  height: 100px;
+  float: left;
+  margin: 0 8px 10px 0;
+}
+
+
+/* Item show page */
+.item_show {
+  height: 300px;
+}
 
 /* Navigation & alert */
 .alert {

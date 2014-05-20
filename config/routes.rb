@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   delete 'sessions' => 'sessions#destroy'
 
   resources :fashionistas, except: :edit 
-    
+  get 'fashionistas/:id/items'    => 'items#index'
+
   get 'styles'        => 'styles#index'
 
   get 'profiles'      => 'profiles#index'
@@ -13,6 +14,6 @@ Rails.application.routes.draw do
   get 'profiles/items/new'    => 'items#new'
   get 'profiles/items/search' => 'items#search'
   post 'profiles/items/save'  => 'items#save'
-
-
+  get 'profiles/items/:id'    => 'items#show'
+  delete '/profiles/items/:id'=> 'items#destroy'
 end

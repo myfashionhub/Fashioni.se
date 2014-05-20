@@ -10,7 +10,7 @@ class Item < ActiveRecord::Base
     size     = "fl=s#{size_code}"
     price    = "fl=p10:#{max}"
     category = "products"
-    
+
     url += "#{category}?pid=#{id}&#{retailers}&fts=#{term}&#{size}&#{price}"
 
     raw_result = HTTParty.get(url)
@@ -19,7 +19,7 @@ class Item < ActiveRecord::Base
        name:         item['brandedName'], 
        url:          item['clickUrl'], 
        image_url:    item['image']['sizes'].fetch('IPhone')['url'],
-       price:        "#{item['priceLabel']} #{item['currency']}"
+       price:        "#{item['priceLabel']}"
      }
     end
 
@@ -27,17 +27,17 @@ class Item < ActiveRecord::Base
   end
 
 
-  def self.add(id)  
-    results = packaged_results.map do |result|
-      self.create(
-        description: result['name'], 
-        image_url:   result['image_url'], 
-        url:         result['url'], 
-        price:       result['price']
+  def self.add(product_id)  
+    id = ENV.fetch('SHOPSTYLE_ID')
+    url = "http://api.shopstyle.com/api/v2/products/#{product_id}?pid=#{id}"
+    result = HTTParty.get(url)
+    
+    self.create(
+        description: result['brandedName'], 
+        image_url:   result['image']['sizes']['IPhone']['url'], 
+        url:         result['clickUrl'], 
+        price:       result['priceLabel']
         )
-    end  
-
-  return results
   end
 
 end

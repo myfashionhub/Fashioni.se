@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController 
   def index
-    @fashionista = Fashionista.find(params[:fashionista_id])
+    @fashionista = Fashionista.find(params[:id])
     @items = @fashionista.items.all
   end
 
@@ -21,9 +21,19 @@ class ItemsController < ApplicationController
 
   def save
     new_item = Item.add(params[:shopstyle_id])
-    new_item.save
     current_fashionista.items << new_item
+    redirect_to '/profiles'
   end  
+
+  def show
+    @item = Item.find(params[:id])
+  end
+
+  def destroy
+    Item.delete(params[:id])
+    redirect_to '/profiles'
+  end
+
 end
 
 
