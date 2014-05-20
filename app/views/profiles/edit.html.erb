@@ -67,8 +67,16 @@
     </td>
   </tr>
 
+
 </table>
 <% end %>
+
+  <form action='/fashionistas/<%= current_fashionista.id %>' method='post' class='delete'>
+    <%= token_tag %>
+    <input type='hidden' name='_method' value='delete'>
+    <button>Delete account</button>
+  </form>
+  <div class="row"></div>
 
   </div>
 

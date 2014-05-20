@@ -2,7 +2,8 @@
  *= require bootstrap
  *= require bootstrap.min
  *= require bootstrap-theme
- *= require bootstrap-theme.min   
+ *= require bootstrap-theme.min  
+ *= require font-awesome 
  *= require_tree .
  *= require_self
  */
@@ -122,8 +123,8 @@ input#email:focus, input#password:focus{
 
 /* Fashionista new & edit form */
 table.form {
-
   margin: 0 auto;
+  width: 480px;
 }
 
 .form td {
@@ -150,6 +151,17 @@ table.form {
   padding-top: 10px;
   text-align: right; 
 }
+
+form.button {
+  width: 140px;
+  float: right;
+  margin-right: 105px; /* align with update button */
+} 
+.delete button {  /* Delete acc button */
+  width: 140px;
+  margin-top: 10px;
+}
+
 
 /* Fashionista all/index */
 
@@ -182,7 +194,7 @@ table.form {
   float: none;
 }
 
-img.profile {
+.profile_pic {
   width: 300px;
   float: left; 
   margin: 10px 30px 10px 0;
@@ -193,19 +205,12 @@ h2, .show h3 {
   font-family: 'Special Elite', cursive;
 }
 
-h2 {
-  margin-top: 60px;
-}
-  
+h2 { margin-top: 60px; }
+.show h3 { margin-top: 30px; }
+
 .show p {
   font-family: 'Sanchez', serif;
-}
-
-
-form.button {
-  width: 140px;
-  display: inline;
-  margin-left: 10px;
+  font-size: 18px;
 }
 
 button, 
@@ -243,13 +248,30 @@ button,
           box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
 }
 
-a.button {
+a.edit {
   color: #333;
 }
 
-a.button:hover {
+a.edit:hover {
   color: #333;
   text-decoration: none;
+}
+
+.edit button {
+  margin: 20px 10px 5px 0;
+}
+
+.profile_grid img {
+  width: 50px;  
+}
+
+.profile_grid td:nth-child(odd) {
+  width: 65px;
+}
+
+.profile_grid td:nth-child(even) p {
+  margin-bottom: 0;
+  vertical-align: bottom;
 }
 
 
@@ -320,7 +342,7 @@ img.thumbnail {
   position: absolute;
   background: transparent;
   width: 380px;
-  margin: 5px 0 0 65%; /* float right */
+  margin: 5px 0 0 50%; /* float right */
   padding: 5px;
   font-size: 15px;
   text-transform: uppercase;

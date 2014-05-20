@@ -5,29 +5,34 @@
 <div class="container"> 
   <div class="col-md-10"> 
   <h2>
-    <b><%= current_fashionista.username %>'s profile <br/></b>
+    <b>You are <%= current_fashionista.username %><br/></b>
   </h2>
 
 
-  <img src="<%= current_fashionista.pic_url %>" class="profile" /><br/>
+  <img src="<%= current_fashionista.pic_url %>" class="profile_pic" /><br/>
 
   <p>
-    Tagline: <b><%= current_fashionista.tagline %></b><br/>
-    Style: <b><%= Style.find(current_fashionista.style_id).name.capitalize %></b>
+    <i class="fa fa-quote-left"></i>
+    <b><%= current_fashionista.tagline %></b>
+    <i class="fa fa-quote-right"></i>
   </p>
-
-  <a href="/profiles/edit" class='button'>
+    
+  <table class='profile_grid'>
+    <tr>
+      <td><img src='/assets/hanger-icon.png' /></td> 
+      
+      <td>
+        <p><b><%= Style.find(current_fashionista.style_id).name.capitalize %></b>
+        </p>
+      </td>
+    </tr>
+  </table>
+        
+  <a href="/profiles/edit" class='edit'>
     <button>Edit profile</button>
   </a>  
 
-
-  <form action='/fashionistas/<%= current_fashionista.id %>' method='post' class='button'>
-    <%= token_tag %>
-    <input type='hidden' name='_method' value='delete'>
-    <button>Delete account</button>
-  </form>
-
-  <a href="/profiles/items/new" class='button'>
+  <a href="/profiles/items/new" class='edit'>
     <button>Search for items</button>
   </a> 
 

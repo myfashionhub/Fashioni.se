@@ -39,6 +39,7 @@ class FashionistasController < ApplicationController
 
   def destroy
     Fashionista.delete(current_fashionista.id)
+    session[:fashionista_id] = nil
     redirect_to "/fashionistas"    
   end  
 

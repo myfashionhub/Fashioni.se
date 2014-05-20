@@ -11,12 +11,24 @@
   </h2>
 
 
-  <img src="<%= @fashionista.pic_url %>" class="profile" /><br/>
+  <img src="<%= @fashionista.pic_url %>" class="profile_pic" /><br/>
 
   <p>
-    Tagline: <b><%= @fashionista.tagline %></b><br/>
-    Style: <b><%= Style.find(@fashionista.style_id).name.capitalize %></b>
+    <i class="fa fa-quote-left"></i>
+      <b><%= @fashionista.tagline %></b>
+    <i class="fa fa-quote-right"></i> 
   </p>
+
+  <table class='profile_grid'>
+    <tr>
+      <td><img src='/assets/hanger-icon.png' /></td> 
+      
+      <td>
+        <p>
+        <b><%= Style.find(@fashionista.style_id).name.capitalize %></b>
+        </p>
+    </tr>
+  </table>
   
  
   <h3><%= @fashionista.username %>'s closet</h3>
