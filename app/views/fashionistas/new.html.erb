@@ -1,12 +1,17 @@
 <div class="show">
 
-<div class="container">
+<%= render "nav" %>
 
+
+<div class="container">
   <div class="col-md-8">
     <h2>Sign up to use Fashioni.se</h2>
 
+<%= render 'error' %>
+
+
 <%= form_for @fashionista do |f| %>
-<table class='form'>
+<table class='new_form'>
   <tr>
     <td><%= f.label :username, "Username:" %></td>
     <td><%= f.text_field :username %> </td>
@@ -28,20 +33,19 @@
   </tr>
 
   <!--tr>
-    <td><%= f.label :type, "Pick what you're interested in:" %></td>
+    <td><%#= f.label :type, "Pick what you're interested in:" %></td>
     <td>
-      <%= f.radio_button :type, "women" %>
-      <%= f.label :type, "Women's wear", value: 'women' %>
+      <%#= f.radio_button :type, "women" %>
+      <%#= f.label :type, "Women's wear", value: 'women' %>
       <br/>
-      <%= f.radio_button :type, "men" %>
-      <%= f.label :type, "Men's wear", value: 'men' %>
+      <%#= f.radio_button :type, "men" %>
+      <%#= f.label :type, "Men's wear", value: 'men' %>
     </td>
   </tr-->
   
   <tr> 
     <td><%= f.label :budget, "Choose your budget range:" %></td> 
     <td><%= f.select :budget, ['Under $50', '$50 - $100', 'Over $100'] %></td> 
-<%#:prompt => 'Select one' %> 
   </tr>
 
   <tr>
@@ -72,8 +76,8 @@
 </table>  
 <% end %>
 
-  </div>
+  </div> <!-- 8 column div -->
 
-</div>  
+</div>  <!-- container div -->
 
-</div>
+</div>  <!-- show div -->

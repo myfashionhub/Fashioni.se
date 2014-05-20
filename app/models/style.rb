@@ -4,18 +4,22 @@ class Style < ActiveRecord::Base
   
   def id
     case name
-    when 'trendy'
+    when 'women: trendy'
       1
-    when 'business'
+    when 'women: business'
       2
-    when 'active'
+    when 'women: active'
       3
-    when 'sexy'
+    when 'women: sexy'
       4
-    when 'vintage'
+    when 'women: vintage'
       5
-    when 'designer'
+    when 'women: designer'
       6
+    when 'men: business' 
+      7
+    when 'men: active'   
+      8
     end        
   end  
  
@@ -72,6 +76,20 @@ class Style < ActiveRecord::Base
                     {:id=>"1467", :name=>"gilt"}, 
                     {:id=>"357", :name=>"bcbgmaxazria"}, 
                     {:id=>"27", :name=>"net-a-porter"}]
+    when 7   
+  retailer_array = [{:id=>"21", :name=>"shopbop"}, 
+                    {:id=>"8", :name=>"bloomingdale's"}, 
+                    {:id=>"427", :name=>"theoutnet"}, 
+                    {:id=>"1467", :name=>"gilt"}, 
+                    {:id=>"357", :name=>"bcbgmaxazria"}, 
+                    {:id=>"27", :name=>"net-a-porter"}]
+    when 8   
+  retailer_array = [{:id=>"21", :name=>"shopbop"}, 
+                    {:id=>"8", :name=>"bloomingdale's"}, 
+                    {:id=>"427", :name=>"theoutnet"}, 
+                    {:id=>"1467", :name=>"gilt"}, 
+                    {:id=>"357", :name=>"bcbgmaxazria"}, 
+                    {:id=>"27", :name=>"net-a-porter"}]                                    
      
     end    
   end

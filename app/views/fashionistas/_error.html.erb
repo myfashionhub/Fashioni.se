@@ -1,0 +1,15 @@
+<% if @fashionista.errors.any? %>
+  <div class="errors">
+  <p>
+  The form has <%= pluralize(@fashionista.errors.count, "error") %> 
+  </p>
+  
+  <ul>
+  <% @fashionista.errors.full_messages.each do |msg| %>
+  
+    <li><%= msg %></li>
+  <% end %>  
+  </ul>
+
+  </div>
+<% end %>

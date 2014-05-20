@@ -2,19 +2,11 @@ class ProfilesController < ApplicationController
   before_action :authorize, only: [:index, :edit]
 
   def index
+    @current_fashionista = Fashionista.find(session[:fashionista_id])
   end
 
   def edit
-  end
-
-  def update
-    current_fashionista.update(fashionista_params)
-    redirect_to "/profiles"    
-  end
-
-  def destroy
-    Fashionista.delete(current_fashionista.id)
-    redirect_to "/fashionistas"   
+    @current_fashionista = Fashionista.find(session[:fashionista_id])
   end
 
   private  

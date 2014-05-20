@@ -5,7 +5,7 @@
 <div class="container"> 
   <div class="col-md-10"> 
   <h2>
-    <b>You are <%= current_fashionista.username %><br/></b>
+    <b>You are <%= @current_fashionista.username %><br/></b>
   </h2>
 
 
@@ -13,7 +13,7 @@
 
   <p>
     <i class="fa fa-quote-left"></i>
-    <b><%= current_fashionista.tagline %></b>
+    <b><%= @current_fashionista.tagline %></b>
     <i class="fa fa-quote-right"></i>
   </p>
     
@@ -22,7 +22,7 @@
       <td><img src='/assets/hanger-icon.png' /></td> 
       
       <td>
-        <p><b><%= Style.find(current_fashionista.style_id).name.capitalize %></b>
+        <p><b><%= Style.find(@current_fashionista.style_id).name.capitalize %></b>
         </p>
       </td>
     </tr>

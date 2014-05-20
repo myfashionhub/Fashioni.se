@@ -3,13 +3,12 @@ class Item < ActiveRecord::Base
   has_and_belongs_to_many :fashionistas
 
 
-  def self.search_api(term, retailers, size_code, max)
+  def self.search_api(term, category, retailers, size_code, max)
     url      = "http://api.shopstyle.com/api/v2/"
     id = ENV.fetch('SHOPSTYLE_ID')
     term     = term.gsub(' ','+')
     size     = "fl=s#{size_code}"
     price    = "fl=p10:#{max}"
-    category = "products"
 
     url += "#{category}?pid=#{id}&#{retailers}&fts=#{term}&#{size}&#{price}"
 

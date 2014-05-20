@@ -2,6 +2,10 @@ class Fashionista < ActiveRecord::Base
   has_secure_password
   has_many :items
   belongs_to :style
+  #validates :username, presence: true
+  validates :email, presence: true, uniqueness: true,
+             email: true
+  validates :password, length: {within: 6..12, wrong_length: "Password length does not match requirement"}
 
   def size_convert
     size_code = ''
@@ -38,4 +42,5 @@ class Fashionista < ActiveRecord::Base
     return max
   end
 
+  
 end

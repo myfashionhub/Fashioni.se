@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   def search 
     @fashionista   = current_fashionista
     retailer_array = Style.map(@fashionista.style_id)
+      if 
     retailers      = Style.extract_id(retailer_array) 
     size_code      = @fashionista.size_convert
     max            = @fashionista.budget_max

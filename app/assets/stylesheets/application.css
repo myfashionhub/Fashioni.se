@@ -122,29 +122,26 @@ input#email:focus, input#password:focus{
 
 
 /* Fashionista new & edit form */
-table.form {
+.new_form, .edit_form {
   margin: 0 auto;
   width: 480px;
 }
 
-.form td {
+.new_form td,
+.edit_form td {
   padding-bottom: 11px; /* spacing between rows */
 }
 
-.form td label {
+.new_form td label,
+.edit_form td label {
   vertical-align: baseline;
   margin: 0;
   padding-top: 7px;  
 }
 
-.form td input {
+.new_form td input,
+.edit_form td input {
   vertical-align: top;
-}
-
-.form tr:nth-child(5n) td:nth-child(even),
-.form tr:nth-child(5n+1) td:nth-child(even),
-.form tr:nth-child(5n+2) td:nth-child(even) {
-  text-align: center;
 }
 
 .confirm { /* create button */
@@ -155,11 +152,12 @@ table.form {
 form.button {
   width: 140px;
   float: right;
-  margin-right: 105px; /* align with update button */
 } 
 .delete button {  /* Delete acc button */
   width: 140px;
   margin-top: 10px;
+  float: right;
+  margin-right: 105px; /* align with update button */  
 }
 
 
@@ -214,7 +212,8 @@ h2 { margin-top: 60px; }
 }
 
 button, 
-.form .confirm input /* edit/new form button */ {
+.new_form .confirm input, /* edit/new form button */ 
+.edit_form .confirm input {
   background-image: -webkit-linear-gradient(top, #f2dede 0%, #d990a3 100%);
   background-image:         linear-gradient(to bottom, #f2dede 0%, #d990a3 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff2d6ca2', GradientType=0);

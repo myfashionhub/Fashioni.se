@@ -7,8 +7,8 @@
   <div class="col-md-8">
     <h2>Edit profile</h2>
 
-<%= form_for current_fashionista do |f| %>   
-<table class='form'>
+<%= form_for @current_fashionista do |f| %>   
+<table class='edit_form'>
   <tr>
     <td><%= f.label :username, "Username:" %></td>
     <td><%= f.text_field :username %> </td>
@@ -56,10 +56,10 @@
     <td><%= f.collection_select :style_id, Style.all, :id, :name %></td>
   </tr>
 
-  <tr>
-    <td><%= f.label :password, "Password:" %></td>
-    <td><%= f.password_field :password %></td>
-  </tr>
+  <!--tr>
+    <td><%#= f.label :password, "Password:" %></td>
+    <td><%#= f.password_field :password %></td>
+  </tr-->
 
   <tr>
     <td colspan='2' class='confirm'>
@@ -76,7 +76,7 @@
     <input type='hidden' name='_method' value='delete'>
     <button>Delete account</button>
   </form>
-  <div class="row"></div>
+  <div class="row">&nbsp;</div>
 
   </div>
 

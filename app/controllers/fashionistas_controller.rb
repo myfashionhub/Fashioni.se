@@ -15,32 +15,35 @@ class FashionistasController < ApplicationController
     default_tag = {'tagline' => 'Fashionizer'} 
     default_pic = {'pic_url' => "/assets/profile#{num}.jpg"}
 
-    if params.require(:fashionista).permit(:tagline, :pic_url).nil?
-      @fashionista = Fashionista.create(fashionista_params.merge!(default_tag).merge!(default_pic))
-    elsif params.require(:fashionista).permit(:tagline).nil?  
-      @fashionista = Fashionista.create(fashionista_params.merge!(default_tag))
-    elsif params.require(:fashionista).permit(:pic_url).nil?  
-      @fashionista = Fashionista.create(fashionista_params.merge!(default_pic))  
+#   if params.require(:fashionista).permit(:tagline, :pic_url).nil?
+#     @fashionista = Fashionista.create(fashionista_params.merge!(default_tag).merge!(default_pic))
+#   elsif params.require(:fashionista).permit(:tagline).nil?  
+#     @fashionista = Fashionista.create(fashionista_params.merge!(default_tag))
+#   elsif params.require(:fashionista).permit(:pic_url).nil?  
+#     @fashionista = Fashionista.create(fashionista_params.merge!(default_pic))  
+    @fashionista = Fashionista.new(fashionista_params)
+    if @fashionista.save
+      redirect_to "/fashionistas/#{@fashionista.id}"
     else
-      @fashionista = Fashionista.create(fashionista_params)
+      render 'new'
     end    
-
-    redirect_to "/fashionistas/#{@fashionista.id}"
   end
 
   def update
-    current_fashionista.update(fashionista_params)
-    redirect_to "/profiles"    
+    @current_fashionista = Fashionista.find(session[:fashionista_id])
+    @current_fashionista.update(fashionista_params)
+    redirect_to '/profiles'    
   end
 
   def show 
     @fashionista = Fashionista.find(params[:id])
   end
 
+
   def destroy
     Fashionista.delete(current_fashionista.id)
     session[:fashionista_id] = nil
-    redirect_to "/fashionistas"    
+    redirect_to root_path    
   end  
 
 #  def update
