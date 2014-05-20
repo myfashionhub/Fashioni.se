@@ -5,7 +5,7 @@ class Fashionista < ActiveRecord::Base
   #validates :username, presence: true
   validates :email, presence: true, uniqueness: true,
              email: true
-  validates :password, length: {within: 6..12, wrong_length: "Password length does not match requirement"}
+  validates :password, length: {within: 6..12, wrong_length: "Password length does not match requirement"}, :on => :create
 
   def size_convert
     size_code = ''
@@ -21,7 +21,8 @@ class Fashionista < ActiveRecord::Base
     when 'L (12-14)'
       size_code = '87'        
     when 'XL (16-18)'
-        size_code = '80'  
+        size_code = '80' 
+          #36 '225', 38 '227', 40 '229', 42 '231', 44 '233', 46 '235'
     end
 
     return size_code

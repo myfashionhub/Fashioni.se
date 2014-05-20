@@ -5,12 +5,12 @@ class Item < ActiveRecord::Base
 
   def self.search_api(term, category, retailers, size_code, max)
     url      = "http://api.shopstyle.com/api/v2/"
-    id = ENV.fetch('SHOPSTYLE_ID')
+    id = ENV.fetch('SHOPSTYLE_ID') #uid9636-25025806-0
     term     = term.gsub(' ','+')
-    size     = "fl=s#{size_code}"
+    size     = "&fl=s#{size_code}"
     price    = "fl=p10:#{max}"
 
-    url += "#{category}?pid=#{id}&#{retailers}&fts=#{term}&#{size}&#{price}"
+    url += "products?pid=#{id}&#{retailers}&fts=#{category}#{term}#{size}&#{price}"
 
     raw_result = HTTParty.get(url)
     results = raw_result['products'].map do |item|
@@ -22,7 +22,7 @@ class Item < ActiveRecord::Base
      }
     end
 
-    return results 
+    return results
   end
 
 

@@ -10,14 +10,19 @@ class ItemsController < ApplicationController
 
   def search 
     @fashionista   = current_fashionista
-    retailer_array = Style.map(@fashionista.style_id)
-      if 
+    retailer_array = Style.map(@fashionista.style_id) 
     retailers      = Style.extract_id(retailer_array) 
-    size_code      = @fashionista.size_convert
     max            = @fashionista.budget_max
     term           = params[:search_term] 
+    
+    if (1..6).include? @fashionista.style_id
+      size_code = @fashionista.size_convert
+    else
+      category  = 'men+'
+      size_code = nil
+    end 
 
-    @items = Item.search_api(term, retailers, size_code, max)
+    @items = Item.search_api(term, category, retailers, size_code, max)
   end  
 
   def save

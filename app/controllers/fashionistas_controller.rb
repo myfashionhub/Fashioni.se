@@ -29,9 +29,14 @@ class FashionistasController < ApplicationController
     end    
   end
 
+  def edit
+    @current_fashionista = Fashionista.find(session[:fashionista_id])
+  end
+    
   def update
     @current_fashionista = Fashionista.find(session[:fashionista_id])
     @current_fashionista.update(fashionista_params)
+
     redirect_to '/profiles'    
   end
 

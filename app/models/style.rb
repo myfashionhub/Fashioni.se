@@ -39,7 +39,7 @@ class Style < ActiveRecord::Base
   retailer_array = [{:id=>"39", :name=>"loft"}, 
                     {:id=>"5", :name=>"j.crew"}, 
                     {:id=>"1512", :name=>"j.crew"}, 
-                    {:id=>"4", :name=>"ann taylor"}, 
+                    {:id=>"4", :name=>"ann taylor"},
                     {:id=>"374", :name=>"dsw"}, 
                     {:id=>"1138", :name=>"baublebar"}]
 
@@ -77,19 +77,19 @@ class Style < ActiveRecord::Base
                     {:id=>"357", :name=>"bcbgmaxazria"}, 
                     {:id=>"27", :name=>"net-a-porter"}]
     when 7   
-  retailer_array = [{:id=>"21", :name=>"shopbop"}, 
+  retailer_array = [{:id=>"108", :name=>"asos"}, 
                     {:id=>"8", :name=>"bloomingdale's"}, 
-                    {:id=>"427", :name=>"theoutnet"}, 
+                    {:id=>"5", :name=>"j.crew"}, 
                     {:id=>"1467", :name=>"gilt"}, 
-                    {:id=>"357", :name=>"bcbgmaxazria"}, 
-                    {:id=>"27", :name=>"net-a-porter"}]
+                    {:id=>"60", :name=>"brooks brothers"}, 
+                    {:id=>"54", :name=>"banana republic"}]
     when 8   
-  retailer_array = [{:id=>"21", :name=>"shopbop"}, 
-                    {:id=>"8", :name=>"bloomingdale's"}, 
-                    {:id=>"427", :name=>"theoutnet"}, 
-                    {:id=>"1467", :name=>"gilt"}, 
-                    {:id=>"357", :name=>"bcbgmaxazria"}, 
-                    {:id=>"27", :name=>"net-a-porter"}]                                    
+  retailer_array = [{:id=>"21", :name=>"pacsun"}, 
+                    {:id=>"41", :name=>"american eagle"}, 
+                    {:id=>"427", :name=>"urban outfitters"}, 
+                    {:id=>"40", :name=>"aeropostale"}, 
+                    {:id=>"13", :name=>"gap"},
+                    {:id=>"43", :name=>"tilly's"}]                                    
      
     end    
   end
