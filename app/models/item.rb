@@ -3,13 +3,13 @@ class Item < ActiveRecord::Base
   has_and_belongs_to_many :fashionistas
 
 
-  def self.search_api(term, category, retailers, size_code, max)
+  def self.search_api(term, category, retailers, size_code, max, sort)
     url      = "http://api.shopstyle.com/api/v2/"
     id = ENV.fetch('SHOPSTYLE_ID') #uid9636-25025806-0
     term     = term.gsub(' ','+')
     size     = "&fl=s#{size_code}"
     price    = "fl=p10:#{max}"
-
+    sort     = "&sort=#{sort}" 
     url += "products?pid=#{id}&#{retailers}&fts=#{category}#{term}#{size}&#{price}"
 
     raw_result = HTTParty.get(url)
@@ -21,7 +21,7 @@ class Item < ActiveRecord::Base
        price:        "#{item['priceLabel']}"
      }
     end
-
+    
     return results
   end
 

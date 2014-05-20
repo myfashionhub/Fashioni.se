@@ -22,26 +22,28 @@ class Fashionista < ActiveRecord::Base
       size_code = '87'        
     when 'XL (16-18)'
         size_code = '80' 
-          #36 '225', 38 '227', 40 '229', 42 '231', 44 '233', 46 '235'
+    #36 '225', 38 '227', 40 '229', 42 '231', 44 '233', 46 '235'
     end
 
     return size_code
   end
 
 
-  def budget_max 
-    max = 0
-    case budget
-    when 'Under $50'
-      max = 50
-    when '$50 - $100'  
-      max = 100
-    when 'Over $100'    
-      max = 400
-    end  
+#  def budget_max 
+#    max = 0
+#    case budget
+#    when 'Under $50'
+#      max = 50
+#    when '$50 - $100'  
+#      max = 100
+#    when '$100 - $200'    
+#      max = 200
+#    when 'Over $200'   
+#      max = 500
+#    end  #
 
-    return max
-  end
+#    return max
+#  end
 
   
 end

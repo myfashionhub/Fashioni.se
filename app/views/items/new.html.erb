@@ -1,39 +1,67 @@
 <div class="show">
+
+  <%= render 'fashionistas/nav' %>
+
   <div class="container">
 
-  <h2>Trendy items this season: </h2>  
-  <p>Click to search:</p>
+  <div class="col-md-8"> 
+  <h2>Get customized search results:</h2>  
+  
+  <%= form_tag '/profiles/items/search', method: :get do %>
+  <table class='search_form'>
+    <tr>
+      <td>
+        <p><%= label_tag :search_term, "Search term" %></p>
+      </td>
+      <td>
+        <%= text_field_tag :search_term, nil, placeholder: 'Ex: tank top' %>
+      </td>  
+    </tr>
 
-  <form action='/profiles/items/search' method='get'>
-    <input type='text' name='search_term' placholder='fringe top'>
-    <button>Search</button>  
-  </form>
+    <tr>
+      <td>
+        <%= label_tag :max, "Choose budget" %>
+      </td>
+      
+      <td>  
+        <%= radio_button_tag :max, 50 %>
+        <%= label_tag :max, "$50 & under" %>
 
-  <form action='/profiles/items/search' method='get'>
-    <input type='hidden' name='search_term' value='leather top'>
-    <button>Leather top</button>  
-  </form>
+        <%= radio_button_tag :max, 100 %>
+        <%= label_tag :max, "$50 - $100" %><br/>
 
-  <form action='/profiles/items/search' method='get'>
-    <input type='hidden' name='search_term' value='leather shorts'>
-    <button>Leather shorts</button>  
-  </form>
+        <%= radio_button_tag :max, 200 %>
+        <%= label_tag :max, "$100 - $200" %>
 
-  <form action='/fashionistas/<%= @fashionista.id%>/items/search' method='get'>
-    <input type='hidden' name='search_term' value='leather skirt'>
-    <button>Leather skirt</button>  
-  </form>  
+        <%= radio_button_tag :max, 500 %>
+        <%= label_tag :max, "Over $200" %>
+      </td>
 
-  <form action='/fashionistas/<%= @fashionista.id%>/items/search' method='get'>
-    <input type='hidden' name='search_term' value='fringe top'>
-    <button>Fringe top</button>  
-  </form>
+      <tr>
+      <td>
+        <%= label_tag :sort, "Sort by (default: relevance)" %>
+      </td>
+      
+      <td>  
+        <%= radio_button_tag :sort, 'Popular' %>
+        <%= label_tag :sort, "Most popular" %><br/>
 
-  <form action='/fashionistas/<%= @fashionista.id%>/items/search' method='get'>
-    <input type='hidden' name='search_term' value='fringe dress'>
-    <button>Fringe dress</button>  
-  </form>
+        <%= radio_button_tag :sort, 'PriceLoHi' %>
+        <%= label_tag :sort, "Price low to high" %><br/>
 
+        <%= radio_button_tag :sort, 'Recency' %>
+        <%= label_tag :sort, "Newest" %>
+      </td>
+      </tr>  
+      <tr class='confirm'>
+        <td colspan='2'>
+          <%= submit_tag "Search"  %>
+        </td>
+      </tr>
+    </tr>
+
+  </table>  
+  <% end %>  
 summer leather
 sundress
 summer denim
@@ -44,6 +72,6 @@ print
 floral
 work/business
     
-    
+  </div>  
   </div>
 </div>

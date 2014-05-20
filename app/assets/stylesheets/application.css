@@ -122,25 +122,29 @@ input#email:focus, input#password:focus{
 
 
 /* Fashionista new & edit form */
-.new_form, .edit_form {
+.new_form, .edit_form,
+.search_form {
   margin: 0 auto;
   width: 480px;
 }
 
 .new_form td,
-.edit_form td {
+.edit_form td,
+.search_form {
   padding-bottom: 11px; /* spacing between rows */
 }
 
 .new_form td label,
-.edit_form td label {
+.edit_form td label,
+.search_form td label {
   vertical-align: baseline;
   margin: 0;
   padding-top: 7px;  
 }
 
 .new_form td input,
-.edit_form td input {
+.edit_form td input,
+.search_form td input {
   vertical-align: top;
 }
 
