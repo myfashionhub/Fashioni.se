@@ -41,13 +41,16 @@ class Fashionista < ActiveRecord::Base
     end
     default_pic = "/assets/profile#{num}.jpg"
 
-    if self.pic_url.empty?
+    if self.pic_url.empty? && self.tagline.empty?  
+      self.pic_url = default_pic
+      self.tagline = default_tag
+    elsif self.pic_url.empty?
       self.pic_url = default_pic
     elsif self.tagline.empty?  
       self.tagline = default_tag
     else
-      self.pic_url
-      self.tagline   
+      self.pic_url 
+      self.tagline 
     end # if statement  
 
   end
