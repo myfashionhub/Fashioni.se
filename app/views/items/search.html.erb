@@ -11,7 +11,7 @@
   <h2>Search results for <%= params[:search_term] %></h2>  
 
   <% @items.each do |item| %>
-
+  <ul class='search_result'>
   <div class='result'>
     <div class="img_frame">  
       <img src='<%= item[:image_url] %>' />
@@ -29,7 +29,7 @@
     <%= submit_tag "Save to closet" %>
   <% end %>
   </p>
-
+  </ul>
   <% end %> 
  
 </div>
