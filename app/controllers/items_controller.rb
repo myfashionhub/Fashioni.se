@@ -10,11 +10,16 @@ class ItemsController < ApplicationController
 
   def search 
     @fashionista   = current_fashionista
-    retailer_array = Style.map(@fashionista.style_id) 
+      if params[:brand]
+        retailers = ""
+      else  
+    retailer_array = Style.retailer_array(@fashionista.style_id) 
     retailers      = Style.extract_id(retailer_array) 
+      end
     max            = params[:max]
     term           = params[:search_term] 
     sort           = params[:sort]
+
     if (1..6).include? @fashionista.style_id
       category  = nil
       size_code = @fashionista.size_convert
@@ -32,9 +37,19 @@ class ItemsController < ApplicationController
     redirect_to '/profiles'
   end  
 
+  
+  def copy
+    item = Item.find(params[:item_id])
+    new_item = Item.create(item.item_params)
+    current_fashionista.items << new_item
+    redirect_to '/profiles'
+  end
+
+
   def show
     @item = Item.find(params[:id])
   end
+  
 
   def destroy
     Item.delete(params[:id])

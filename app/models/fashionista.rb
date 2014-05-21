@@ -2,10 +2,13 @@ class Fashionista < ActiveRecord::Base
   has_secure_password
   has_many :items
   belongs_to :style
-  #validates :username, presence: true
+
+  validates :username, presence: true
   validates :email, presence: true, uniqueness: true,
              email: true
-  validates :password, length: {within: 6..12, wrong_length: "Password length does not match requirement"}, :on => :create
+  validates :password, length: {within: 6..16, wrong_length: "Password length does not match requirement"}, :on => :create
+
+  before_save :default_params
 
   def size_convert
     size_code = ''
@@ -28,22 +31,26 @@ class Fashionista < ActiveRecord::Base
     return size_code
   end
 
+  def default_params
+    if (1..6).include? self.style_id
+      num = (1..7).to_a.sample
+      default_tag = 'Fashionista'
+    else
+      num = (8..10).to_a.sample  
+      default_tag = 'Dapper'
+    end
+    default_pic = "/assets/profile#{num}.jpg"
 
-#  def budget_max 
-#    max = 0
-#    case budget
-#    when 'Under $50'
-#      max = 50
-#    when '$50 - $100'  
-#      max = 100
-#    when '$100 - $200'    
-#      max = 200
-#    when 'Over $200'   
-#      max = 500
-#    end  #
+    if self.pic_url.empty?
+      self.pic_url = default_pic
+    elsif self.tagline.empty?  
+      self.tagline = default_tag
+    else
+      self.pic_url
+      self.tagline   
+    end # if statement  
 
-#    return max
-#  end
-
+  end
+  
   
 end

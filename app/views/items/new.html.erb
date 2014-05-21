@@ -17,20 +17,29 @@
       </td>  
     </tr>
 
+
+    <tr>
+      <td colspan='2'>
+        <%= label_tag :brand, "Check if searching for a specific brand" %>
+        <%= check_box_tag :brand, true %>      
+      </td>  
+    </tr>
+
+
     <tr>
       <td>
-        <%= label_tag :max, "Choose budget" %>
+        <%= label_tag :max, "Choose budget (optional)" %>
       </td>
       
       <td>  
         <%= radio_button_tag :max, 50 %>
-        <%= label_tag :max, "$50 & under" %>
+        <%= label_tag :max, "$50 & under" %> &nbsp; &nbsp;
 
         <%= radio_button_tag :max, 100 %>
         <%= label_tag :max, "$50 - $100" %><br/>
 
         <%= radio_button_tag :max, 200 %>
-        <%= label_tag :max, "$100 - $200" %>
+        <%= label_tag :max, "$100 - $200" %> &nbsp; &nbsp;
 
         <%= radio_button_tag :max, 500 %>
         <%= label_tag :max, "Over $200" %>
@@ -52,9 +61,9 @@
         <%= label_tag :sort, "Newest" %>
       </td>
       </tr>  
-      <tr class='confirm'>
-        <td colspan='2'>
-          <%= submit_tag "Search"  %>
+      <tr >
+        <td colspan='2' class='confirm'>
+          <%= submit_tag "Search for items"  %>
         </td>
       </tr>
     </tr>

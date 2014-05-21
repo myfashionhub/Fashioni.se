@@ -29,22 +29,6 @@
     <td><%= f.text_field :pic_url %></td>
   </tr>
 
-  <!--tr>
-    <td><%= f.label :type, "Pick what you're interested in:" %></td>
-    <td>
-      <%= f.radio_button :type, "women" %>
-      <%= f.label :type, "Women's wear", value: 'women' %>
-      <br/>
-      <%= f.radio_button :type, "men" %>
-      <%= f.label :type, "Men's wear", value: 'men' %>
-    </td>
-  </tr-->
-  
-  <tr> 
-    <td><%= f.label :budget, "Choose your budget range:" %></td> 
-    <td><%= f.select :budget, ['Under $50', '$50 - $100', 'Over $100'] %></td> 
-<%#:prompt => 'Select one' %> 
-  </tr>
 
   <tr>
     <td><%= f.label :size, "Select your clothing size:" %></td>  
@@ -56,10 +40,6 @@
     <td><%= f.collection_select :style_id, Style.all, :id, :name %></td>
   </tr>
 
-  <!--tr>
-    <td><%#= f.label :password, "Password:" %></td>
-    <td><%#= f.password_field :password %></td>
-  </tr-->
 
   <tr>
     <td colspan='2' class='confirm'>

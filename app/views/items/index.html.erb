@@ -2,23 +2,41 @@
 
 <%= render 'fashionistas/nav' %>
 
-<div class="container">
-
-  <div class="col-md-10">  
+<div class="container search">
+ 
   <h2><%= @fashionista.username %>'s closet</h2>  
-    <% @items.each do |item| %>
-    <div class='result'>
+    
+  <ul class='search_result'>  
+  <% @items.order('created_at DESC').each do |item| %>
+
+  <li>
+    <div class="img_frame"> 
       <a href='<%= item.url %>'>
-        <img src='<%= item.image_url %>' height="200" />
+        <img src='<%= item.image_url %>' target='_blank' />
       </a>
-
-      <p>
-        <%= item.description %> | <%= item.price %>
-      </p>  
     </div>
+      
+    <p>
+      <%= item.description %> | <%= item.price %>
+    </p>  
 
-    <% end %> 
-  </div>
+    <p>
+    <form action='/profiles/items/copy' method='post'>
+      <%= token_tag %>
+      <input type='hidden' name='item_id' value='<%=item.id%>'>
+      <input type='submit' value='Copy item'>
+    </form>  
+
+      <%= form_tag '/item.id/copy', method: :post do %>
+        <%= hidden_field_tag 'item_id', item.id %>
+        <%= submit_tag "Copy item" %>
+      <% end %>
+    </p>
+
+  </li>  
+
+  <% end %> 
+  </ul>
 
 </div>
 </div>

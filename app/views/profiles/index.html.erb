@@ -38,7 +38,7 @@
 
   
   <h3>Your closet</h3>
-  <% current_fashionista.items.each do |item| %>
+  <% current_fashionista.items.order('created_at DESC').each do |item| %>
     <a href='/profiles/items/<%= item.id %>'>
       <img src="<%= item.image_url %>" class='thumbnail' />
     </a>

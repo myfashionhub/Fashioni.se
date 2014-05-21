@@ -27,12 +27,17 @@
         <p>
         <b><%= Style.find(@fashionista.style_id).name.capitalize %></b>
         </p>
+      </td>  
     </tr>
   </table>
   
- 
-  <h3><%= @fashionista.username %>'s closet</h3>
-  <% @fashionista.items.each do |item| %>
+  <h3>
+    <a href="/fashionistas/<%= @fashionista.id %>/items">
+    View <%= @fashionista.username %>'s closet
+    </a>
+  </h3>
+  
+  <% @fashionista.items.order('created_at DESC').each do |item| %>
     <img src="<%= item.image_url %>" class='thumbnail' />
   <% end %>
     

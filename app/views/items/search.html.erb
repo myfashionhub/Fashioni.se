@@ -8,11 +8,12 @@
 
 
 <div class="container search">
-  <h2>Search results for <%= params[:search_term] %></h2>  
+  <h2>Search results for "<%= params[:search_term] %>"</h2>  
 
+<ul class='search_result'>
   <% @items.each do |item| %>
-  <ul class='search_result'>
-  <div class='result'>
+  
+  <li>
     <div class="img_frame">  
       <img src='<%= item[:image_url] %>' />
     </div>
@@ -29,8 +30,11 @@
     <%= submit_tag "Save to closet" %>
   <% end %>
   </p>
-  </ul>
+  </li>
+
+
   <% end %> 
- 
+  </ul>
+   
 </div>
 </div>

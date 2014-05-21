@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def timeout_in
-    5.minutes
+    10.minutes
     redirect_to root_path, notice: "Session timeout. Please log back in" 
   end
 

@@ -2,15 +2,14 @@ class Item < ActiveRecord::Base
   has_and_belongs_to_many :styles
   has_and_belongs_to_many :fashionistas
 
-
   def self.search_api(term, category, retailers, size_code, max, sort)
     url      = "http://api.shopstyle.com/api/v2/"
     id = ENV.fetch('SHOPSTYLE_ID') #uid9636-25025806-0
     term     = term.gsub(' ','+')
     size     = "&fl=s#{size_code}"
-    price    = "fl=p10:#{max}"
+    price    = "&fl=p10:#{max}"
     sort     = "&sort=#{sort}" 
-    url += "products?pid=#{id}&#{retailers}&fts=#{category}#{term}#{size}&#{price}"
+    url += "products?pid=#{id}#{retailers}&fts=#{category}#{term}#{size}#{price}"
 
     raw_result = HTTParty.get(url)
     results = raw_result['products'].map do |item|
@@ -32,11 +31,21 @@ class Item < ActiveRecord::Base
     result = HTTParty.get(url)
     
     self.create(
+        shopstyle_id:result['id'],
         description: result['brandedName'], 
         image_url:   result['image']['sizes']['IPhone']['url'], 
         url:         result['clickUrl'], 
         price:       result['priceLabel']
         )
+  end
+
+  def item_params
+    { :shopstyle_id => shopstyle_id,
+      :description  => description, 
+      :image_url    => image_url,
+      :url          => url,
+      :price        => price
+    }
   end
 
 end

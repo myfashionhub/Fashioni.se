@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140519153701) do
+ActiveRecord::Schema.define(version: 20140521183819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,11 +24,9 @@ ActiveRecord::Schema.define(version: 20140519153701) do
     t.integer  "style_id"
     t.string   "username"
     t.string   "tagline"
-    t.string   "budget"
     t.string   "pic_url"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "type"
   end
 
   create_table "items", force: true do |t|
@@ -40,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140519153701) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "price"
+    t.integer  "shopstyle_id"
   end
 
   create_table "styles", force: true do |t|

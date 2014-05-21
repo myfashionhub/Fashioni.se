@@ -164,6 +164,26 @@ form.button {
   margin-right: 105px; /* align with update button */  
 }
 
+/* Fashionista item search form */
+.search_form {
+  margin-top: 20px;
+}
+
+.search_form td {
+  padding-bottom: 10px;
+}
+.search_form td label {
+  vertical-align: bottom;
+}  
+.search_form input[type='radio'],
+.search_form input[type='checkbox'] {
+  vertical-align: middle;
+} 
+
+.search_form .confirm input {
+  display: block;
+  margin: 0 auto;
+}
 
 /* Fashionista all/index */
 
@@ -189,7 +209,8 @@ form.button {
   background-attachment: scroll;
 }
 
-.col-md-10, .col-md-8 {
+.col-md-10, .col-md-8, 
+.col-md-6 {
   min-height: 100%;
   margin: 0 auto;
   display: block;
@@ -210,20 +231,22 @@ h2, .show h3 {
 h2 { margin-top: 60px; }
 .show h3 { margin-top: 30px; }
 
-.show p {
+p {
   font-family: 'Sanchez', serif;
   font-size: 18px;
 }
 
 button, 
 .new_form .confirm input, /* edit/new form button */ 
-.edit_form .confirm input {
-  background-image: -webkit-linear-gradient(top, #f2dede 0%, #d990a3 100%);
-  background-image:         linear-gradient(to bottom, #f2dede 0%, #d990a3 100%);
+.edit_form .confirm input,
+.search_form .confirm input {
+  color: #333;
+  background-image: -webkit-linear-gradient(top, #ebcccc 0%, #cc6a84 100%);
+  background-image:         linear-gradient(to bottom, #ebcccc 0%, #cc6a84 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff2d6ca2', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   background-repeat: repeat-x;
-  border-color: #f3e0e0;
+  /* border-color: #f3e0e0; */
   padding: 8px 12px;
   font-size: 16px;
   line-height: 1.33;
@@ -233,13 +256,12 @@ button,
 button:hover, button:focus 
 .confirm input[type='submit']:hover, /* not working */
 .confirm input[type='submit']:focus {
-  background-color: #d990a3;
+  background-color: #cc6a84;
   background-position: 0 -15px;
 }
 button:active, button.active 
 .confirm input[type='submit']:active {
-  background-color: #d990a3;
-  border-color: #f3e0e0;
+  background-color: #cc6a84;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
           box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);  
 }
@@ -278,49 +300,6 @@ a.edit:hover {
 }
 
 
-/* Items search page */
-.container.search {
-  max-width:990px; /* 4 results per row */
-}
-
-.result {
-  margin: 15px 20px 0 20px;
-  width: 200px;
-  max-height: 300px;
-  float: left;
-
-}
-
-/* display: block; */
-
-.img_frame {
-  width: 200px;
-  height: 200px;
-  background-color: #fff;
-  margin-bottom: 10px;
-  display: block;
-} 
-
-.result img {
-  max-height: 200px;
-  max-width: 200px;
-  display: block;
-  margin: 0 auto;
-} 
-
-.result p {
-  margin: 0;
-  color: #555;
-  font-size: 15px;
-  }
-/*
-.result:nth-child(3n):after {
-  clear: both;
-  display: block;
-  height: 10px;
-} */
-
-
 /* Fashionista profile page */
 img.thumbnail {
   height: 100px;
@@ -330,8 +309,20 @@ img.thumbnail {
 
 
 /* Item show page */
-.item_show {
+
+.col-md-6 h3 {  
+  margin-top: 50px;
+  text-align: center;
+}
+
+.item_show img {
   height: 300px;
+  display: block;
+  margin: 15px auto;
+}
+
+.item_show {
+  text-align: center;
 }
 
 /* Navigation & alert */
@@ -373,3 +364,49 @@ background-color: #f5f5f5;
   margin: 20px 0;
 }
  */
+
+
+/* Items search page */
+.container.search {
+  max-width:990px; /* 4 results per row */
+}
+
+.result {
+  margin: 15px 20px 0 20px;
+  width: 200px;
+  max-height: 300px;
+  float: left;
+}
+
+ul.search_result {
+  padding-left: 0;
+}
+
+.search_result li {
+  display: inline-block;
+  width: 200px;
+  margin: 10px 0 10px 20px;
+  vertical-align: top;
+
+}
+
+.search_result li p {
+  font-size: 16px;
+  color: #555;
+}
+
+.img_frame {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  display: block;
+} 
+
+.img_frame img {
+  max-height: 200px;
+  max-width: 200px;
+  display: block;
+  margin: 0 auto;
+} 
+
