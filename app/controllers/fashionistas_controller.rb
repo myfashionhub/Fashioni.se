@@ -13,7 +13,6 @@ class FashionistasController < ApplicationController
 
   def create
     @fashionista = Fashionista.new(fashionista_params)
-    binding.pry
     if @fashionista.save
       redirect_to "/fashionistas/#{@fashionista.id}", 
       notice: "Profile successfully created. Please log in" 
