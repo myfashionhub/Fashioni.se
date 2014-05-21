@@ -20,18 +20,12 @@
       <%= item.description %> | <%= item.price %>
     </p>  
 
-    <p>
+    
     <form action='/profiles/items/copy' method='post'>
       <%= token_tag %>
       <input type='hidden' name='item_id' value='<%=item.id%>'>
       <input type='submit' value='Copy item'>
     </form>  
-
-      <%= form_tag '/item.id/copy', method: :post do %>
-        <%= hidden_field_tag 'item_id', item.id %>
-        <%= submit_tag "Copy item" %>
-      <% end %>
-    </p>
 
   </li>  
 
