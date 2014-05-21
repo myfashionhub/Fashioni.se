@@ -3,6 +3,10 @@ class SessionsController < ApplicationController
   def index
   end
 
+  def timeout_in
+    5.minutes
+  end
+
   def create
     fashionista = Fashionista.find_by(email: params[:email])
 
