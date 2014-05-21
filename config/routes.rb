@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'fashionistas/:id/items'    => 'items#index'
 
   get 'styles'        => 'styles#index'
+  get 'about'        => 'about#index'
 
   get 'profiles'      => 'profiles#index'
   get 'profiles/edit'      => 'profiles#edit'

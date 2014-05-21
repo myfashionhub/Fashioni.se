@@ -3,10 +3,11 @@
   <% if current_fashionista %>
     <%= link_to "Signed in as "+current_fashionista.username, '/profiles', method: :get %> |
     <%= link_to "Log out", sessions_path, method: :delete %> |
-    <%= link_to "All fashionistas", '/fashionistas', method: :get %>
+    <%= link_to "All fashionistas", '/fashionistas', method: :get %> |
+    <%= link_to "About", '/about', method: :get %>
   <% else %>
-    <%= link_to "Log in", root_path, method: :get %> | 
-    <%= link_to "Sign up", '/fashionistas/new', method: :get %> |
+    <%= link_to "Log in/Sign up", root_path, method: :get %> | 
+    <%= link_to "About", '/about', method: :get %> |
     <%= link_to "All fashionistas", '/fashionistas', method: :get %>
   <% end %>
 </div>
