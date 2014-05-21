@@ -16,7 +16,7 @@
         <b><%= fashionista.username.upcase %></b></a>, 
         fashionista #<%= fashionista.id %> <br/>
         Tagline: <%= fashionista.tagline %> <br/>
-        Style: <%#= Style.find(fashionista.style_id).name.capitalize %>  
+        Style: <%= Style.find(fashionista.style_id).name.capitalize %>  
       </p> 
 
       <div class="row"></div>
