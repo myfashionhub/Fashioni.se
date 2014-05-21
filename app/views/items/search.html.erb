@@ -1,7 +1,15 @@
 <div class="show">
-  <div class="container search">
 
-    
+<div class="nav">
+  <a href="/profiles/items/new">
+    Back to search
+  </a>  
+</div>
+
+
+<div class="container search">
+  <h2>Search results for <%= params[:search_term] %></h2>  
+
   <% @items.each do |item| %>
 
   <div class='result'>
@@ -15,14 +23,14 @@
     </a> <%= item[:price] %>
   </p>
 
-  <form action='/profiles/items/save' method='post'>
-    <%= token_tag %>
-    <input type='hidden' name='shopstyle_id' value='<%= item[:shopstyle_id] %>'>
-    <input type='submit' value='Save to closet'>
-  </form>
+  <p>
+  <%= form_tag '/profiles/items/save', method: :post do %>
+    <%= hidden_field_tag 'shopstyle_id', item[:shopstyle_id] %>
+    <%= submit_tag "Save to closet" %>
+  <% end %>
+  </p>
 
-  <% end %>  
-  </div>
-
-  <div class="row">&nbsp;</div>
+  <% end %> 
+ 
+</div>
 </div>

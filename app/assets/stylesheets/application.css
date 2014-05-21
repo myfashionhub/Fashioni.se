@@ -284,37 +284,41 @@ a.edit:hover {
 }
 
 .result {
-  margin: 15px 20px 0 20px;
-  float: left;
+  /*margin: 15px 20px 0 20px;*/
   width: 200px;
-  height: 300px;
+  max-height: 300px;
+  float: left;
+
 }
+
+/* display: block; */
 
 .img_frame {
   width: 200px;
   height: 200px;
   background-color: #fff;
   margin-bottom: 10px;
-}
+  display: block;
+} 
 
-.img_frame img {
-  max-width: 200px;
+.result img {
   max-height: 200px;
+  max-width: 200px;
   display: block;
   margin: 0 auto;
-}
+} 
 
 .result p {
   margin: 0;
   color: #555;
   font-size: 15px;
   }
-
+/*
 .result:nth-child(3n):after {
   clear: both;
   display: block;
   height: 10px;
-}
+} */
 
 
 /* Fashionista profile page */
