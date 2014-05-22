@@ -1,9 +1,9 @@
 ## Fashioni.se
 
-A brand new tool for discovering and keeping track of your coveted fashion items.
+A bookmarking tool for discovering and keeping track of your coveted fashion items.
 Fashioni.se customizes search results based on your declared style and lets you filter items by price, popularity and/or recency. Peak inside other fashionistas' closets and steal their style. **[View app](http://fashionize.herokuapp.com/)**
 
-![Fashioni.se homepage]("http://nessanguyen.comze.com/file/screenshot.png" "Fashioni.se homepage")
+![Fashioni.se homepage](http://nessanguyen.comze.com/file/screenshot.png "Fashioni.se homepage")
 
 ### Developer
 Fashioni.se utilizes the [Shopstyle API](http://shopsense.shopstyle.com/shopsense/28044754, "Shopstyle API"), a fashion product search engine, to bring customized results.   
@@ -29,4 +29,9 @@ It customizes fashionista's search results by passing filter params into the que
        price:        "#{item['priceLabel']}"
      }
     end
+    
+    return results
+  end    
 ```    
+
+The user interface is light and easy to use. Fashionistas can see what other users have in their closet and copy items from them.
