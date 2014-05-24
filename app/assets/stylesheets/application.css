@@ -331,19 +331,23 @@ img.thumbnail {
 
 /* Item show page */
 
-.col-md-6 h3 {  
-  margin-top: 50px;
+.item_show h3 {  
+  margin-top: 60px;
   text-align: center;
-}
-
-.item_show img {
-  height: 300px;
-  display: block;
-  margin: 15px auto;
 }
 
 .item_show {
   text-align: center;
+}
+
+.item_show form, .item_show input.button {
+  margin-bottom: 10px;
+}
+
+iframe {
+  width: 100%;
+  display: inline;
+  min-height: 650px;
 }
 
 /* Navigation & alert */

@@ -1,7 +1,7 @@
   
 <div class="nav">
   <% if current_fashionista %>
-    <%= link_to "Signed in as "+current_fashionista.username, '/profiles', method: :get %> |
+    <%= link_to "Account", '/profiles', method: :get %> |
     <%= link_to "Log out", sessions_path, method: :delete %> |
     <%= link_to "All fashionistas", '/fashionistas', method: :get %> |
     <%= link_to "About", '/about', method: :get %>

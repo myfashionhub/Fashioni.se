@@ -13,7 +13,7 @@ It customizes fashionista's search results by passing filter params into the que
 ```ruby
   def self.search_api(term, category, retailers, size_code, max, sort)
     url      = "http://api.shopstyle.com/api/v2/"
-    id = ENV.fetch('SHOPSTYLE_ID') #uid9636-25025806-0
+    id = ENV.fetch('SHOPSTYLE_ID')
     term     = term.gsub(' ','+')
     size     = "&fl=s#{size_code}"
     price    = "&fl=p10:#{max}"

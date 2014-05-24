@@ -7,10 +7,9 @@
 </div>
 
 <div class="container">
-
-  <div class="col-md-6">
-
-  <h3>
+  
+  <div class='item_show'>
+  <h3 class='item-show'>
     <a href='<%= @item.url %>' target='_blank'>
       <%= @item.description %>  
     </a>
@@ -18,15 +17,16 @@
   </h3>  
  
 
-  <div class='item_show'>
-    <img src='<%= @item.image_url %>' />
+
+    <!--img src='<%= @item.image_url %>' /-->
     
   <form action='/profiles/items/<%= @item.id %>' method='post'>
     <%= token_tag %>
     <input type='hidden' name='_method' value='delete'>
     <input type='submit' value='Remove from closet' class='button'>
   </form>
-  </div>
+  
+  <iframe src="<%= @item.url %>" seamless></iframe>
 
   </div>
 </div>

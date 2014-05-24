@@ -51,7 +51,7 @@ class Fashionista < ActiveRecord::Base
     else
       self.pic_url 
       self.tagline 
-    end # if statement  
+    end 
 
   end
   
