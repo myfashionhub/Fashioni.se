@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Fashioni.se</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <%= favicon_link_tag 'hanger-icon.png' %>
-  <link href='http://fonts.googleapis.com/css?family=Pacifico|Special+Elite|Sanchez|Satisfy' rel='stylesheet' type='text/css'>
-</head>
-<body>
+  <head>
+    <title>Fashioni.se</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'hanger-icon.png' %>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico|Special+Elite|Sanchez|Satisfy' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
 
-  <% if flash %>
-  <div class="alert">
-    <%= flash.now[:alert] %>
-    <%= flash.now[:notice] %>
-  </div>  
-  <% end %>
+    <% if flash %>
+      <div class="alert">
+        <%= flash.now[:alert] %>
+        <%= flash.now[:notice] %>
+      </div>
+    <% end %>
 
-  <%= yield %>
+    <%= yield %>
 
-</body>
+  </body>
 </html>

@@ -1,49 +1,49 @@
 <div class="show">
 
-<%= render "nav" %>
+  <%= render "nav" %>
 
 
-<div class="container"> 
+  <div class="container">
 
-  <div class="col-md-10"> 
-  <h2>
-    <b><%= @fashionista.username %>'s profile</b>
-  </h2>
+    <div class="col-md-10">
+      <h2>
+        <b><%= @fashionista.username %>'s profile</b>
+      </h2>
 
 
-  <img src="<%= @fashionista.pic_url %>" class="profile_pic" /><br/>
+      <img src="<%= @fashionista.pic_url %>" class="profile_pic" /><br/>
 
-  <p>
-    <i class="fa fa-quote-left"></i>
-      <b><%= @fashionista.tagline %></b>
-    <i class="fa fa-quote-right"></i> 
-  </p>
+      <p>
+        <i class="fa fa-quote-left"></i>
+        <b><%= @fashionista.tagline %></b>
+        <i class="fa fa-quote-right"></i>
+      </p>
 
-  <table class='profile_grid'>
-    <tr>
-      <td><img src='/assets/hanger-icon.png' /></td> 
-      
-      <td>
-        <p>
-        <b><%= Style.find(@fashionista.style_id).name.capitalize %></b>
-        </p>
-      </td>  
-    </tr>
-  </table>
-  
-  <h3>
-    <a href="/fashionistas/<%= @fashionista.id %>/items">
-    View <%= @fashionista.username %>'s closet
-    </a>
-  </h3>
-  
-  <% @fashionista.items.order('created_at DESC').each do |item| %>
-    <img src="<%= item.image_url %>" class='thumbnail' />
-  <% end %>
-    
-  <div class="row"></div>
+      <table class='profile_grid'>
+        <tr>
+          <td><img src='/assets/hanger-icon.png' /></td>
+
+          <td>
+            <p>
+              <b><%= Style.find(@fashionista.style_id).name.capitalize %></b>
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      <h3>
+        <a href="/fashionistas/<%= @fashionista.id %>/items">
+          View <%= @fashionista.username %>'s closet
+        </a>
+      </h3>
+
+      <% @fashionista.items.order('created_at DESC').each do |item| %>
+        <img src="<%= item.image_url %>" class='thumbnail' />
+      <% end %>
+
+      <div class="row"></div>
+    </div>
+
   </div>
- 
-</div>
 
 </div>

@@ -1,4 +1,4 @@
-class FashionistasController < ApplicationController 
+class FashionistasController < ApplicationController
 
   def index
     @fashionista = current_fashionista
@@ -14,11 +14,11 @@ class FashionistasController < ApplicationController
   def create
     @fashionista = Fashionista.new(fashionista_params)
     if @fashionista.save
-      redirect_to "/fashionistas/#{@fashionista.id}", 
-      notice: "Profile successfully created. Please log in" 
+      redirect_to "/fashionistas/#{@fashionista.id}",
+        notice: "Profile successfully created. Please log in"
     else
       render 'new'
-    end    
+    end
   end
 
 
@@ -26,16 +26,16 @@ class FashionistasController < ApplicationController
     @current_fashionista = Fashionista.find(session[:fashionista_id])
   end
 
-    
+
   def update
     @current_fashionista = Fashionista.find(session[:fashionista_id])
     @current_fashionista.update(fashionista_params)
 
-    redirect_to '/profiles'    
+    redirect_to '/profiles'
   end
 
 
-  def show 
+  def show
     @fashionista = Fashionista.find(params[:id])
   end
 
@@ -43,15 +43,13 @@ class FashionistasController < ApplicationController
   def destroy
     Fashionista.delete(current_fashionista.id)
     session[:fashionista_id] = nil
-    redirect_to root_path    
-  end  
+    redirect_to root_path
+  end
 
 
-  private  
+  private
   def fashionista_params
-    params.require(:fashionista).permit(:username, :email, :tagline, :pic_url, :budget, :size, :style_id, :password, :password_confirmation)  
-  end 
+    params.require(:fashionista).permit(:username, :email, :tagline, :pic_url, :budget, :size, :style_id, :password, :password_confirmation)
+  end
 
- 
 end
-

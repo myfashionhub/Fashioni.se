@@ -1,52 +1,52 @@
 <div class="show">
 
-<%= render "/fashionistas/nav" %>
+  <%= render "/fashionistas/nav" %>
 
-<div class="container"> 
-  <div class="col-md-10"> 
-  <h2>
-    <b><%= @current_fashionista.username %></b>
-  </h2>
+  <div class="container">
+    <div class="col-md-10">
+      <h2>
+        <b><%= @current_fashionista.username %></b>
+      </h2>
 
 
-  <img src="<%= @current_fashionista.pic_url %>" class="profile_pic" /><br/>
+      <img src="<%= @current_fashionista.pic_url %>" class="profile_pic" /><br/>
 
-  <p>
-    <i class="fa fa-quote-left"></i>
-    <b><%= @current_fashionista.tagline %></b>
-    <i class="fa fa-quote-right"></i>
-  </p>
-    
-  <table class='profile_grid'>
-    <tr>
-      <td><img src='/assets/hanger-icon.png' /></td> 
-      
-      <td>
-        <p><b><%= Style.find(@current_fashionista.style_id).name.capitalize %></b>
-        </p>
-      </td>
-    </tr>
-  </table>
-        
-  <a href="/profiles/edit" class='edit'>
-    <button>Edit profile</button>
-  </a>  
+      <p>
+        <i class="fa fa-quote-left"></i>
+        <b><%= @current_fashionista.tagline %></b>
+        <i class="fa fa-quote-right"></i>
+      </p>
 
-  <a href="/profiles/items/new" class='edit'>
-    <button>Search for items</button>
-  </a> 
+      <table class='profile_grid'>
+        <tr>
+          <td><img src='/assets/hanger-icon.png' /></td>
 
-  
-  <h3>Your closet</h3>
-  <% current_fashionista.items.order('created_at DESC').each do |item| %>
-    <a href='/profiles/items/<%= item.id %>'>
-      <img src="<%= item.image_url %>" class='thumbnail' />
-    </a>
-  <% end %>
-    
-  <div class="row"></div>
+          <td>
+            <p><b><%= Style.find(@current_fashionista.style_id).name.capitalize %></b>
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      <a href="/profiles/edit" class='edit'>
+        <button>Edit profile</button>
+      </a>
+
+      <a href="/profiles/items/new" class='edit'>
+        <button>Search for items</button>
+      </a>
+
+
+      <h3>Your closet</h3>
+      <% current_fashionista.items.order('created_at DESC').each do |item| %>
+        <a href='/profiles/items/<%= item.id %>'>
+          <img src="<%= item.image_url %>" class='thumbnail' />
+        </a>
+      <% end %>
+
+      <div class="row"></div>
+    </div>
+
   </div>
- 
-</div>
 
 </div>

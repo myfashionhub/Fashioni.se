@@ -1,69 +1,69 @@
 <div class="show">
 
-<%= render "nav" %>
+  <%= render "nav" %>
 
 
-<div class="container">
-  <div class="col-md-8">
-    <h2>Sign up to use Fashioni.se</h2>
+  <div class="container">
+    <div class="col-md-8">
+      <h2>Sign up to use Fashioni.se</h2>
 
-<%= render 'error' %>
+      <%= render 'error' %>
 
 
-<%= form_for @fashionista do |f| %>
-<table class='new_form'>
-  <tr>
-    <td><%= f.label :username, "Username:" %></td>
-    <td><%= f.text_field :username %> </td>
-  </tr>
+      <%= form_for @fashionista do |f| %>
+        <table class='new_form'>
+          <tr>
+            <td><%= f.label :username, "Username:" %></td>
+            <td><%= f.text_field :username %> </td>
+          </tr>
 
-  <tr>
-    <td><%= f.label :email, "Email:" %></td>
-    <td><%= f.text_field :email %></td>
-  </tr>
+          <tr>
+            <td><%= f.label :email, "Email:" %></td>
+            <td><%= f.text_field :email %></td>
+          </tr>
 
-  <tr>
-    <td><%= f.label :tagline, "Tagline (optional):" %></td>
-    <td><%= f.text_field :tagline %></td>
-  </tr>
+          <tr>
+            <td><%= f.label :tagline, "Tagline (optional):" %></td>
+            <td><%= f.text_field :tagline %></td>
+          </tr>
 
- 
-  <tr>
-    <td><%= f.label :pic_url, "Profile picture URL (optional):" %></td>
-    <td><%= f.text_field :pic_url %></td>
-  </tr>
- 
 
-  <tr>
-    <td><%= f.label :size, "Select your clothing size:" %></td>  
-    <td><%= f.select :size, ['XXS (0)', 'XS (2)', 'S (4-6)', 'M (8-10)', 'L (12-14)', 'XL (16-18)'] %> </td>
-  </tr>
+          <tr>
+            <td><%= f.label :pic_url, "Profile picture URL (optional):" %></td>
+            <td><%= f.text_field :pic_url %></td>
+          </tr>
 
-  <tr>
-    <td><%= f.label :style_id, "Pick a style that most describes you:" %></td>
-    <td><%= f.collection_select :style_id, Style.all, :id, :name %></td>
-  </tr>
 
-  <tr>
-    <td><%= f.label :password, "Password:" %></td>
-    <td><%= f.password_field :password %></td>
-  </tr>
+          <tr>
+            <td><%= f.label :size, "Select your clothing size:" %></td>
+            <td><%= f.select :size, ['XXS (0)', 'XS (2)', 'S (4-6)', 'M (8-10)', 'L (12-14)', 'XL (16-18)'] %> </td>
+          </tr>
 
-  <tr>
-    <td><%= f.label :password_confirmation, "Password confirmation:" %></td>
-    <td><%= f.password_field :password_confirmation %></td>
-  </tr>
+          <tr>
+            <td><%= f.label :style_id, "Pick a style that most describes you:" %></td>
+            <td><%= f.collection_select :style_id, Style.all, :id, :name %></td>
+          </tr>
 
-  <tr>
-    <td colspan='2' class='confirm'>
-      <%= f.submit "Create profile" %>
-    </td>
-  </tr>
-</table>  
-<% end %>
+          <tr>
+            <td><%= f.label :password, "Password:" %></td>
+            <td><%= f.password_field :password %></td>
+          </tr>
 
-  </div> <!-- 8 column div -->
+          <tr>
+            <td><%= f.label :password_confirmation, "Password confirmation:" %></td>
+            <td><%= f.password_field :password_confirmation %></td>
+          </tr>
 
-</div>  <!-- container div -->
+          <tr>
+            <td colspan='2' class='confirm'>
+              <%= f.submit "Create profile" %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+
+    </div> <!-- 8 column div -->
+
+  </div>  <!-- container div -->
 
 </div>  <!-- show div -->
