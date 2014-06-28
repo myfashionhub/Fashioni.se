@@ -14,8 +14,9 @@ class FashionistasController < ApplicationController
   def create
     @fashionista = Fashionista.new(fashionista_params)
     if @fashionista.save
-      redirect_to "/fashionistas/#{@fashionista.id}", 
-      notice: "Profile successfully created. Please log in" 
+      session[:fashionista_id] = @fashionista.id
+      redirect_to "/profiles", 
+      notice: "Profile successfully created." 
     else
       render 'new'
     end    

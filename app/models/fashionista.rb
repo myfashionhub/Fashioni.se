@@ -52,7 +52,6 @@ class Fashionista < ActiveRecord::Base
       self.pic_url 
       self.tagline 
     end 
-
   end
   
   

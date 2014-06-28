@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   post   'sessions' => 'sessions#create'
   delete 'sessions' => 'sessions#destroy'
 
-  resources :fashionistas#, except: :edit 
+  resources :fashionistas, except: :edit 
   get 'fashionistas/:id/items'    => 'items#index'
 
   get 'styles'        => 'styles#index'
