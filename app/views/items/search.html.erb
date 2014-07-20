@@ -1,40 +1,40 @@
 <div class="show">
 
-<div class="nav">
-  <a href="/profiles/items/new">
-    Back to search
-  </a>  
-</div>
+  <div class="nav">
+    <a href="/profiles/items/new">
+      Back to search
+    </a>
+  </div>
 
 
-<div class="container search">
-  <h2>Search results for "<%= params[:search_term] %>"</h2>  
+  <div class="container search">
+    <h2>Search results for "<%= params[:search_term] %>"</h2>
 
-<ul class='search_result'>
-  <% @items.each do |item| %>
-  
-  <li>
-    <div class="img_frame">  
-      <img src='<%= item[:image_url] %>' />
-    </div>
+    <ul class='search_result'>
+      <% @items.each do |item| %>
 
-  <p>
-    <a href='<%= item[:url] %>' target='_blank'>
-      <%= item[:name] %>  
-    </a> <%= item[:price] %>
-  </p>
+        <li>
+          <div class="img_frame">
+            <img src='<%= item[:image_url] %>' />
+          </div>
 
-  <p>
-  <%= form_tag '/profiles/items/save', method: :post do %>
-    <%= hidden_field_tag 'shopstyle_id', item[:shopstyle_id] %>
-    <%= submit_tag "Save to closet" %>
-  <% end %>
-  </p>
-  </li>
+          <p>
+            <a href='<%= item[:url] %>' target='_blank'>
+              <%= item[:name] %>
+            </a> <%= item[:price] %>
+          </p>
+
+          <p>
+            <%= form_tag '/profiles/items/save', method: :post do %>
+              <%= hidden_field_tag 'shopstyle_id', item[:shopstyle_id] %>
+              <%= submit_tag "Save to closet" %>
+            <% end %>
+          </p>
+        </li>
 
 
-  <% end %> 
-  </ul>
-   
-</div>
+      <% end %>
+    </ul>
+
+  </div>
 </div>

@@ -1,33 +1,33 @@
 <div class="show">
 
-<div class="nav">
-  <a href="/profiles">
-    Back to profile
-  </a>  
-</div>
-
-<div class="container">
-  
-  <div class='item_show'>
-  <h3 class='item-show'>
-    <a href='<%= @item.url %>' target='_blank'>
-      <%= @item.description %>  
+  <div class="nav">
+    <a href="/profiles">
+      Back to profile
     </a>
-      &nbsp; <%= @item.price %>
-  </h3>  
- 
-
-
-    <!--img src='<%= @item.image_url %>' /-->
-    
-  <form action='/profiles/items/<%= @item.id %>' method='post'>
-    <%= token_tag %>
-    <input type='hidden' name='_method' value='delete'>
-    <input type='submit' value='Remove from closet' class='button'>
-  </form>
-  
-  <iframe src="<%= @item.url %>" seamless></iframe>
-
   </div>
-</div>
+
+  <div class="container">
+
+    <div class='item_show'>
+      <h3 class='item-show'>
+        <a href='<%= @item.url %>' target='_blank'>
+          <%= @item.description %>
+        </a>
+        &nbsp; <%= @item.price %>
+      </h3>
+
+
+
+      <!--img src='<%= @item.image_url %>' /-->
+
+      <form action='/profiles/items/<%= @item.id %>' method='post'>
+        <%= token_tag %>
+        <input type='hidden' name='_method' value='delete'>
+        <input type='submit' value='Remove from closet' class='button'>
+      </form>
+
+      <iframe src="<%= @item.url %>" seamless></iframe>
+
+    </div>
+  </div>
 </div>

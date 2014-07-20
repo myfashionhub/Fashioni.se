@@ -1,30 +1,29 @@
 <div class="welcome">
 
-<%= render "/fashionistas/nav" %>
+  <%= render "/fashionistas/nav" %>
 
-<div class='jumbotron'>
+  <div class='jumbotron'>
+    <div class="container">
+      <h1>Fashioni.se</h1>
+      <h3>A virtual closet assistant</h3>
+    </div>
+  </div>
+
+
   <div class="container">
-    <h1>Fashioni.se</h1>
-    <h3>A virtual closet assistant</h3>
-  </div>
-</div>  
+    <div class='form-signin' id='login'>
+      <h3 class='form-signin-heading'>
+        Log in below or <a href="/fashionistas/new">Sign up</a>
+      </h3>
+
+      <%= form_tag sessions_path do %>
+        <%= text_field_tag :email, nil, placeholder: "Email" %>
+        <%= password_field_tag :password, nil, placeholder: "Password" %>
+        <%= submit_tag "Log in" %>
+      <% end %>
+    </div>
 
 
-<div class="container">
-  <div class='form-signin' id='login'>
-    <h3 class='form-signin-heading'>
-      Log in below or <a href="/fashionistas/new">Sign up</a>
-    </h3>
-
-    <%= form_tag sessions_path do %>
-      <%= text_field_tag :email, nil, placeholder: "Email" %>
-      <%= password_field_tag :password, nil, placeholder: "Password" %>
-      <%= submit_tag "Log in" %>
-    <% end %>
-  </div>
-
-
-</div> <!--container div-->
-
+  </div> <!--container div-->
 
 </div> <!--welcome div-->
