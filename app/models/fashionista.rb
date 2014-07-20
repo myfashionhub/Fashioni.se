@@ -1,7 +1,7 @@
 class Fashionista < ActiveRecord::Base
   has_secure_password
   has_and_belongs_to_many :items
-  has_one :style
+  belongs_to :style
 
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true,

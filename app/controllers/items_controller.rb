@@ -13,8 +13,7 @@ class ItemsController < ApplicationController
     if params[:brand]
       retailers = ""
     else
-      retailer_array = Style.retailer_array(@fashionista.style_id)
-      retailers      = Style.extract_id(retailer_array)
+      retailers = Style.retailer_ids(@fashionista.style_id)
     end
     max            = params[:max]
     term           = params[:search_term]
