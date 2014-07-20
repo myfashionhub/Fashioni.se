@@ -30,25 +30,12 @@ class Item < ActiveRecord::Base
     url = "http://api.shopstyle.com/api/v2/products/#{product_id}?pid=#{id}"
     result = HTTParty.get(url)
 
-    self.create(
-                shopstyle_id:result['id'],
+    self.create(shopstyle_id:result['id'],
                 description: result['brandedName'],
                 image_url:   result['image']['sizes']['IPhone']['url'],
                 url:         result['clickUrl'],
                 price:       result['priceLabel']
                )
-  end
-
-  def item_params
-    # FIXME this method is in the wrong place. It should be in the controller
-    # and it should use params.permit().require().
-    {
-     :shopstyle_id => shopstyle_id,
-     :description  => description,
-     :image_url    => image_url,
-     :url          => url,
-     :price        => price
-    }
   end
 
 end

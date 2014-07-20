@@ -2,7 +2,8 @@ class Style < ActiveRecord::Base
   has_and_belongs_to_many :fashionistas
   has_and_belongs_to_many :items
 
-  def id(name)
+  def id
+  # for seeding
     {
      'women: trendy'   => 1,
      'women: business' => 2,
@@ -87,12 +88,16 @@ class Style < ActiveRecord::Base
     }
   end
 
-  def self.retailer_ids(style_id)
+  def self.retailer_query(style_id)
     retailer_hash  = retailer_choices[style_id]
     retailer_ids   = retailer_hash.map do |hash|
       hash[:id]
     end
-    retailer_query = "&#{retailer_ids.join('&')}"
+    retailer_query = ''
+    retailer_ids.each do |retailer_id|
+      retailer_query += "&fl=r#{retailer_id}"
+    end
+    return retailer_query
   end
 
 end

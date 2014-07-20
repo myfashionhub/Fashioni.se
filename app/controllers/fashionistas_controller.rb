@@ -1,7 +1,7 @@
 class FashionistasController < ApplicationController
 
   def index
-    @fashionista = current_fashionista
+    @fashionista  = current_fashionista
     @fashionistas = Fashionista.all
   end
 

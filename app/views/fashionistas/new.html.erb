@@ -9,7 +9,6 @@
 
       <%= render 'error' %>
 
-
       <%= form_for @fashionista do |f| %>
         <table class='new_form'>
           <tr>
@@ -41,7 +40,7 @@
 
           <tr>
             <td><%= f.label :style_id, "Pick a style that most describes you:" %></td>
-            <td><%= f.collection_select :style_id, Style.all, :id, :name %></td>
+            <td><%= f.collection_select(:style_id, Style.all, :id, :name) %></td>
           </tr>
 
           <tr>
