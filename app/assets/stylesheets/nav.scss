@@ -1,0 +1,30 @@
+/* Navigation & alert */
+
+.alert {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: none;
+  background: rgba(255,255,255,.6);
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  font-style: italic;
+  padding: 10px;
+}
+
+.nav {
+  z-index: 2;
+  position: absolute;
+  background: transparent;
+
+  margin: 5px 0 0 54%; /* float right */
+  padding: 5px;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.nav a {
+  color: #444;
+}

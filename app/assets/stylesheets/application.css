@@ -2,8 +2,8 @@
  *= require bootstrap
  *= require bootstrap.min
  *= require bootstrap-theme
- *= require bootstrap-theme.min  
- *= require font-awesome 
+ *= require bootstrap-theme.min
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
@@ -15,7 +15,7 @@ body {
 /* Welcome index form */
 .welcome {
   background-image: url('/assets/bg-collage.jpg');
-  width: 100%; 
+  width: 100%;
   height: 100%;
   margin: 0;
   position: absolute;
@@ -141,7 +141,7 @@ input#email:focus, input#password:focus{
 .search_form td label {
   vertical-align: baseline;
   margin: 0;
-  padding-top: 7px;  
+  padding-top: 7px;
 }
 
 .new_form td input,
@@ -152,18 +152,18 @@ input#email:focus, input#password:focus{
 
 .confirm { /* create button */
   padding-top: 10px;
-  text-align: right; 
+  text-align: right;
 }
 
 form.button {
   width: 140px;
   float: right;
-} 
+}
 .delete button {  /* Delete acc button */
   width: 140px;
   margin-top: 10px;
   float: right;
-  margin-right: 105px; /* align with update button */  
+  margin-right: 105px; /* align with update button */
 }
 
 /* Fashionista item search form */
@@ -179,7 +179,7 @@ form.button {
 }
 .search_form td label {
   vertical-align: bottom;
-}  
+}
 input#search_term {
   width: 80%; /* search input */
 }
@@ -187,7 +187,7 @@ input#search_term {
 .search_form input[type='checkbox'] {
   vertical-align: middle;
   margin-bottom: 5px;
-} 
+}
 
 .search_form .confirm input {
   display: block;
@@ -199,7 +199,7 @@ input#search_term {
 /*margin:  60px 0 20px 40px;*/
 h2.all {
   text-align: center;
-  font-size: 35px;  
+  font-size: 35px;
   font-weight: bold;
 }
 .all {
@@ -225,12 +225,12 @@ h2.all {
 .show {
   background-image: url('/assets/pattern.png');
   min-height: 100%;
-  width: 100%;  
+  width: 100%;
   position: absolute;
   background-attachment: scroll;
 }
 
-.col-md-10, .col-md-8, 
+.col-md-10, .col-md-8,
 .col-md-6 {
   min-height: 100%;
   margin: 0 auto;
@@ -240,7 +240,7 @@ h2.all {
 
 .profile_pic {
   width: 300px;
-  float: left; 
+  float: left;
   margin: 10px 30px 10px 0;
   border: 2px solid #ccc;
 }
@@ -257,8 +257,8 @@ p {
   font-size: 18px;
 }
 
-button, 
-.new_form .confirm input, /* edit/new form button */ 
+button,
+.new_form .confirm input, /* edit/new form button */
 .edit_form .confirm input,
 .search_form .confirm input {
   color: #333;
@@ -274,20 +274,20 @@ button,
   border-radius: 6px;
 }
 
-button:hover, button:focus 
+button:hover, button:focus
 .confirm input[type='submit']:hover, /* not working */
 .confirm input[type='submit']:focus {
   background-color: #cc6a84;
   background-position: 0 -15px;
 }
-button:active, button.active 
+button:active, button.active
 .confirm input[type='submit']:active {
   background-color: #cc6a84;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);  
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
 }
 
-button, 
+button,
 .confirm input[type='submit'] {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
@@ -308,7 +308,7 @@ a.edit:hover {
 }
 
 .profile_grid img {
-  width: 50px;  
+  width: 50px;
 }
 
 .profile_grid td:nth-child(odd) {
@@ -331,7 +331,7 @@ img.thumbnail {
 
 /* Item show page */
 
-.item_show h3 {  
+.item_show h3 {
   margin-top: 60px;
   text-align: center;
 }
@@ -350,45 +350,6 @@ iframe {
   min-height: 650px;
 }
 
-/* Navigation & alert */
-.alert {
-  z-index: 1;
-  position: absolute;
-  background: transparent;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  font-style: italic;
-}
-
-.nav {
-  z-index: 2;
-  position: absolute;
-  background: transparent;
-  
-  margin: 5px 0 0 54%; /* float right */
-  padding: 5px;
-  font-size: 15px;
-  text-transform: uppercase;
-  text-align: right;
-}
-
-.nav a {
-  color: #444;
-}
-
-/* Footer
-#footer {
-position: absolute;
-bottom: 0;
-width: 100%;
-height: 60px;
-background-color: #f5f5f5;
-}
-
-.text-muted {
-  margin: 20px 0;
-}
- */
 
 
 /* Items search page */
@@ -403,11 +364,11 @@ background-color: #f5f5f5;
   float: left;
 }
 
-ul.search_result {
+ul.search-result {
   padding-left: 0;
 }
 
-.search_result li {
+.search-result li {
   display: inline-block;
   width: 200px;
   margin: 10px 0 10px 20px;
@@ -415,7 +376,7 @@ ul.search_result {
 
 }
 
-.search_result li p {
+.search-result li p {
   font-size: 16px;
   color: #555;
 }
@@ -426,14 +387,14 @@ ul.search_result {
   background-color: #fff;
   margin-bottom: 10px;
   display: block;
-} 
+}
 
 .img_frame img {
   max-height: 200px;
   max-width: 200px;
   display: block;
   margin: 0 auto;
-} 
+}
 
 /* About page */
 

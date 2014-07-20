@@ -10,7 +10,7 @@
   <div class="container search">
     <h2>Search results for "<%= params[:search_term] %>"</h2>
 
-    <ul class='search_result'>
+    <ul class='search-result'>
       <% @items.each do |item| %>
 
         <li>
@@ -24,14 +24,8 @@
             </a> <%= item[:price] %>
           </p>
 
-          <p>
-            <%= form_tag '/profiles/items/save', method: :post do %>
-              <%= hidden_field_tag 'shopstyle_id', item[:shopstyle_id] %>
-              <%= submit_tag "Save to closet" %>
-            <% end %>
-          </p>
+          <button data="<%= item[:shopstyle_id] %>">Save to closet</button>
         </li>
-
 
       <% end %>
     </ul>

@@ -32,9 +32,9 @@ class ItemsController < ApplicationController
 
 
   def save
-    new_item = Item.add(params[:shopstyle_id])
-    current_fashionista.items << new_item
-    redirect_to '/profiles'
+    item = Item.add(params[:shopstyle_id])
+    Save.create(fashionista_id: current_fashionista.id, item_id: item.id)
+    render json: item.to_json
   end
 
 
