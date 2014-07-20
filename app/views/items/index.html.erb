@@ -1,36 +1,36 @@
 <div class="show">
 
-<%= render 'fashionistas/nav' %>
+  <%= render 'fashionistas/nav' %>
 
-<div class="container search">
- 
-  <h2><%= @fashionista.username %>'s closet</h2>  
-    
-  <ul class='search_result'>  
-  <% @items.order('created_at DESC').each do |item| %>
+  <div class="container search">
 
-  <li>
-    <div class="img_frame"> 
-      <a href='<%= item.url %>'>
-        <img src='<%= item.image_url %>' target='_blank' />
-      </a>
-    </div>
-      
-    <p>
-      <%= item.description %> | <%= item.price %>
-    </p>  
+    <h2><%= @fashionista.username %>'s closet</h2>
 
-    
-    <form action='/profiles/items/copy' method='post'>
-      <%= token_tag %>
-      <input type='hidden' name='item_id' value='<%=item.id%>'>
-      <input type='submit' value='Copy item'>
-    </form>  
+    <ul class='search_result'>
+      <% @items.order('created_at DESC').each do |item| %>
 
-  </li>  
+        <li>
+          <div class="img_frame">
+            <a href='<%= item.url %>'>
+              <img src='<%= item.image_url %>' target='_blank' />
+            </a>
+          </div>
 
-  <% end %> 
-  </ul>
+          <p>
+            <%= item.description %> | <%= item.price %>
+          </p>
 
-</div>
+
+          <form action='/profiles/items/copy' method='post'>
+            <%= token_tag %>
+            <input type='hidden' name='item_id' value='<%=item.id%>'>
+            <input type='submit' value='Copy item'>
+          </form>
+
+        </li>
+
+      <% end %>
+    </ul>
+
+  </div>
 </div>

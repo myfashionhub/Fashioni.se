@@ -3,74 +3,74 @@
   <%= render 'fashionistas/nav' %>
 
   <div class="container">
- 
-  <h2>Get customized search results:</h2>  
-  
-  <%= form_tag '/profiles/items/search', method: :get do %>
-  <table class='search_form'>
-    <tr>
-      <td>
-        <p><%= label_tag :search_term, "Search term" %></p>
-      </td>
-      <td>
-        <%= text_field_tag :search_term, nil, placeholder: 'Ex: tank top' %>
-      </td>  
-    </tr>
+
+    <h2>Get customized search results:</h2>
+
+    <%= form_tag '/profiles/items/search', method: :get do %>
+      <table class='search_form'>
+        <tr>
+          <td>
+            <p><%= label_tag :search_term, "Search term" %></p>
+          </td>
+          <td>
+            <%= text_field_tag :search_term, nil, placeholder: 'Ex: tank top' %>
+          </td>
+        </tr>
 
 
-    <tr>
-      <td colspan='2'>
-        <%= label_tag :brand, "Check if searching for a specific brand" %> 
-        &nbsp; 
-        <%= check_box_tag :brand, true %>      
-      </td>  
-    </tr>
+        <tr>
+          <td colspan='2'>
+            <%= label_tag :brand, "Check if searching for a specific brand" %>
+            &nbsp;
+            <%= check_box_tag :brand, true %>
+          </td>
+        </tr>
 
 
-    <tr>
-      <td>
-        <%= label_tag :max, "Choose budget (optional)" %>
-      </td>
-      
-      <td>  
-        <%= radio_button_tag :max, 50 %>
-        <%= label_tag :max, "$50 & under" %> &nbsp; &nbsp;
+        <tr>
+          <td>
+            <%= label_tag :max, "Choose budget (optional)" %>
+          </td>
 
-        <%= radio_button_tag :max, 100 %>
-        <%= label_tag :max, "$50 - $100" %><br/>
+          <td>
+            <%= radio_button_tag :max, 50 %>
+            <%= label_tag :max, "$50 & under" %> &nbsp; &nbsp;
 
-        <%= radio_button_tag :max, 200 %>
-        <%= label_tag :max, "$100 - $200" %> &nbsp; &nbsp;
+            <%= radio_button_tag :max, 100 %>
+            <%= label_tag :max, "$50 - $100" %><br/>
 
-        <%= radio_button_tag :max, 500 %>
-        <%= label_tag :max, "Over $200" %>
-      </td>
+            <%= radio_button_tag :max, 200 %>
+            <%= label_tag :max, "$100 - $200" %> &nbsp; &nbsp;
 
-      <tr>
-      <td>
-        <%= label_tag :sort, "Sort by (default: relevance)" %>
-      </td>
-      
-      <td>  
-        <%= radio_button_tag :sort, 'Popular' %>
-        <%= label_tag :sort, "Most popular" %><br/>
+            <%= radio_button_tag :max, 500 %>
+            <%= label_tag :max, "Over $200" %>
+          </td>
 
-        <%= radio_button_tag :sort, 'PriceLoHi' %>
-        <%= label_tag :sort, "Price low to high" %><br/>
+          <tr>
+            <td>
+              <%= label_tag :sort, "Sort by (default: relevance)" %>
+            </td>
 
-        <%= radio_button_tag :sort, 'Recency' %>
-        <%= label_tag :sort, "Newest" %>
-      </td>
-      </tr>  
-      <tr >
-        <td colspan='2' class='confirm'>
-          <%= submit_tag "Search for items", name: nil  %>
-        </td>
-      </tr>
-    </tr>
+            <td>
+              <%= radio_button_tag :sort, 'Popular' %>
+              <%= label_tag :sort, "Most popular" %><br/>
 
-  </table>  
-  <% end %>  
+              <%= radio_button_tag :sort, 'PriceLoHi' %>
+              <%= label_tag :sort, "Price low to high" %><br/>
+
+              <%= radio_button_tag :sort, 'Recency' %>
+              <%= label_tag :sort, "Newest" %>
+            </td>
+          </tr>
+          <tr >
+            <td colspan='2' class='confirm'>
+              <%= submit_tag "Search for items", name: nil  %>
+            </td>
+          </tr>
+        </tr>
+
+      </table>
+    <% end %>
 
   </div>
 </div>

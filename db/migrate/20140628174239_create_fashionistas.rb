@@ -1,14 +1,18 @@
 class CreateFashionistas < ActiveRecord::Migration
-  def change
+  def up
     create_table :fashionistas do |t|
-      t.username :string
-      t.email :string
-      t.size :string
-      t.style_id :integer
-      t.tagline :string
-      t.pic_url :string
-      t.password_digest :string
+      t.string :username
+      t.string :email
+      t.string :size
+      t.integer :style_id
+      t.string :tagline
+      t.string :pic_url
+      t.string :password_digest
       t.timestamps
     end
+  end
+
+  def down
+    drop_table :fashionistas
   end
 end

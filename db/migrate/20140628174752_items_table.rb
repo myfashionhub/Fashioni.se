@@ -1,13 +1,17 @@
 class ItemsTable < ActiveRecord::Migration
-  def change
+  def up
     create_table :items do |t|
-      t.url :string
-      t.image_url :text
-      t.description :string
-      t.price :string
-      t.shopstyle_id :integer
-      t.style_id :integer
+      t.string :url
+      t.text :image_url
+      t.string :description
+      t.string :price
+      t.integer :shopstyle_id
+      t.integer :style_id
       t.timestamps
     end
+  end
+
+  def down
+    drop_table :items
   end
 end
