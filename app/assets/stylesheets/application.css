@@ -12,6 +12,10 @@ body {
   font-size: 16px;
 }
 
+button {
+  outline: none;
+}
+
 /* Welcome index form */
 .welcome {
   background-image: url('/assets/bg-collage.jpg');

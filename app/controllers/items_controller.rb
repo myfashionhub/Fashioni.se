@@ -32,8 +32,9 @@ class ItemsController < ApplicationController
 
 
   def save
-    item = Item.add(params[:shopstyle_id])
-    Save.create(fashionista_id: current_fashionista.id, item_id: item.id)
+    fashionista = current_fashionista
+    item = Item.add(params[:shopstyle_id], fashionista.style_id)
+    Save.find_or_create_by(fashionista_id: fashionista.id, item_id: item.id)
     render json: item.to_json
   end
 

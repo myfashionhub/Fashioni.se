@@ -7,6 +7,7 @@ class ProfilesController < ApplicationController
     @items = saves.map do |save|
       Item.find(save.item_id)
     end
+    @items.sort_by{ |item| item.created_at }
   end
 
   def edit

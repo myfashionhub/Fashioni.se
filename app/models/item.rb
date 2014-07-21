@@ -25,16 +25,17 @@ class Item < ActiveRecord::Base
   end
 
 
-  def self.add(product_id)
-    id = ENV.fetch('SHOPSTYLE_ID')
-    url = "http://api.shopstyle.com/api/v2/products/#{product_id}?pid=#{id}"
+  def self.add(product_id, style_id)
+    api_key = ENV.fetch('SHOPSTYLE_ID')
+    url = "http://api.shopstyle.com/api/v2/products/#{product_id}?pid=#{api_key}"
     result = HTTParty.get(url)
 
-    self.create(shopstyle_id:result['id'],
+    item = Item.find_or_create_by(shopstyle_id:result['id'],
                 description: result['brandedName'],
                 image_url:   result['image']['sizes']['IPhone']['url'],
                 url:         result['clickUrl'],
-                price:       result['priceLabel']
+                price:       result['priceLabel'],
+                style_id:    style_id
                )
   end
 
