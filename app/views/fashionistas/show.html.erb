@@ -37,7 +37,7 @@
         </a>
       </h3>
 
-      <% @fashionista.items.order('created_at DESC').each do |item| %>
+      <% @items.each do |item| %>
         <img src="<%= item.image_url %>" class='thumbnail' />
       <% end %>
 

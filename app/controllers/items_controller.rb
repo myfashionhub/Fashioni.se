@@ -1,7 +1,11 @@
 class ItemsController < ApplicationController
   def index
     @fashionista = Fashionista.find(params[:id])
-    @items = @fashionista.items.all
+    saves        = Save.where(fashionista_id: @fashionista.id)
+    @items       = saves.map do |save|
+      Item.find(save.item_id)
+    end
+    @items.sort_by { |item| item.created_at }
   end
 
   def new
@@ -40,9 +44,9 @@ class ItemsController < ApplicationController
 
 
   def copy
-    item = Item.find(params[:item_id])
-    new_item = Item.create(item_params)
-    current_fashionista.items << new_item
+    item        = Item.find(params[:item_id])
+    fashionista = current_fashionista
+    Save.find_or_create_by(fashionista_id: fashionista.id, item_id: item.id)
     redirect_to '/profile'
   end
 
@@ -59,7 +63,5 @@ class ItemsController < ApplicationController
     save.delete
     redirect_to '/profile'
   end
-
-  private
 
 end

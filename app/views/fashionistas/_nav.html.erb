@@ -1,8 +1,8 @@
 <div class="nav">
   <% if current_fashionista %>
-    <%= link_to "My Closet", '/profiles', method: :get %> |
+    <%= link_to "My Closet", '/profile', method: :get %> |
     <%= link_to "Log out", sessions_path, method: :delete %> |
-    <%= link_to "Homepage", '/fashionistas', method: :get %> |
+    <%= link_to "Home", '/fashionistas', method: :get %> |
     <%= link_to "About", '/about', method: :get %>
 
   <% else %>

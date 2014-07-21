@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'items/new'     => 'items#new'
   get 'items/search'  => 'items#search'
   post 'items/save'   => 'items#save'
-  post 'profiles/items/copy'   => 'items#copy'
+  post 'items/copy'   => 'items#copy'
   get 'items/:id'     => 'items#show'
   delete '/profiles/items/:id' => 'items#destroy'
 end

@@ -15,7 +15,7 @@ class FashionistasController < ApplicationController
     @fashionista = Fashionista.new(fashionista_params)
     if @fashionista.save
       session[:fashionista_id] = @fashionista.id
-      redirect_to "/profiles",
+      redirect_to "/profile",
       notice: "Profile successfully created."
     else
       render 'new'
@@ -32,12 +32,17 @@ class FashionistasController < ApplicationController
     @current_fashionista = Fashionista.find(session[:fashionista_id])
     @current_fashionista.update(fashionista_params)
 
-    redirect_to '/profiles'
+    redirect_to '/profile'
   end
 
 
   def show
     @fashionista = Fashionista.find(params[:id])
+    saves       = Save.where(fashionista_id: @fashionista.id)
+    @items      = saves.map do |save|
+      Item.find(save.item_id)
+    end
+    @items.sort_by { |item| item.created_at }
   end
 
 
