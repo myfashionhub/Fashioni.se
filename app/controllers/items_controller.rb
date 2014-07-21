@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
     item = Item.find(params[:item_id])
     new_item = Item.create(item_params)
     current_fashionista.items << new_item
-    redirect_to '/profiles'
+    redirect_to '/profile'
   end
 
 
@@ -53,8 +53,11 @@ class ItemsController < ApplicationController
 
 
   def destroy
-    Item.delete(params[:id])
-    redirect_to '/profiles'
+    fashionista = current_fashionista
+    item        = Item.find(params[:id])
+    save = Save.find_by(fashionista_id: fashionista.id, item_id: item.id)
+    save.delete
+    redirect_to '/profile'
   end
 
   private

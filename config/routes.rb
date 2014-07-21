@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   get 'styles'                 => 'styles#index'
   get 'about'                  => 'about#index'
 
-  get 'profiles'               => 'profiles#index'
-  get 'profiles/edit'          => 'profiles#edit'
+  get 'profile'               => 'profiles#index'
+  get 'profile/edit'          => 'profiles#edit'
 
   get 'items/new'     => 'items#new'
   get 'items/search'  => 'items#search'
