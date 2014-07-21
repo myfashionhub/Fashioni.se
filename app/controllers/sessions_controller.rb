@@ -1,11 +1,11 @@
-class SessionsController < ApplicationController 
-  
+class SessionsController < ApplicationController
+
   def index
   end
 
   def timeout_in
     10.minutes
-    redirect_to root_path, notice: "Session timeout. Please log back in" 
+    redirect_to root_path, notice: "Session timeout. Please log back in"
   end
 
   def create
@@ -13,15 +13,15 @@ class SessionsController < ApplicationController
 
     if fashionista && fashionista.authenticate(params[:password])
       session[:fashionista_id] = fashionista.id
-      redirect_to '/profiles', notice: "Signed in as #{fashionista.username}"
-    else 
+      redirect_to '/profile', notice: "Signed in as #{fashionista.username}"
+    else
       redirect_to root_path, alert: "Log in failed"
-    end  
+    end
   end
 
 
   def destroy
     session[:fashionista_id] = nil
-    redirect_to root_path, notice: "Logged out" 
+    redirect_to root_path, notice: "Logged out"
   end
-end  
+end

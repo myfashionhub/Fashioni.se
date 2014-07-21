@@ -47,7 +47,7 @@ class ItemsController < ApplicationController
     item        = Item.find(params[:item_id])
     fashionista = current_fashionista
     Save.find_or_create_by(fashionista_id: fashionista.id, item_id: item.id)
-    redirect_to '/profile'
+    render json: item.to_json
   end
 
 

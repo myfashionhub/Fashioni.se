@@ -6,13 +6,13 @@
 
     <h2><%= @fashionista.username %>'s closet</h2>
 
-    <ul class='search_result'>
+    <ul class='search-result'>
       <% @items.each do |item| %>
 
         <li>
           <div class="img_frame">
-            <a href='<%= item.url %>'>
-              <img src='<%= item.image_url %>' target='_blank' />
+            <a href='<%= item.url %>' target='_blank'>
+              <img src='<%= item.image_url %>' />
             </a>
           </div>
 
@@ -20,12 +20,7 @@
             <%= item.description %> | <%= item.price %>
           </p>
 
-
-          <form action='/items/copy' method='post'>
-            <%= token_tag %>
-            <input type='hidden' name='item_id' value='<%=item.id%>'>
-            <input type='submit' value='Copy item'>
-          </form>
+          <button data='<%= item.id %>' class='copy-item'>Copy item</button>
 
         </li>
 

@@ -19,3 +19,17 @@ function successfulSave(data) {
     $('.alert').fadeOut();
   }, 3000);
 }
+
+
+function copyItem() {
+  $('.copy-item').click(function(e) {
+    var item_id = $(e.target).attr('data');
+    $.ajax({
+      url: '/items/copy',
+      method: 'post',
+      dataType: 'json',
+      data: { item_id: item_id },
+      success: successfulSave
+    });
+  });
+}
