@@ -1,0 +1,110 @@
+/* Welcome index form */
+.welcome {
+  background-image: url('/assets/bg-collage.jpg');
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  overflow: scroll;
+}
+
+.jumbotron {
+  padding: 30px;
+  margin-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.jumbotron h1 {
+  font-family: 'Special Elite', cursive;
+}
+
+.jumbotron h3 {
+  font-family: 'Sanchez', serif;
+  font-size: 25px;
+  margin-top: 0;
+}
+#login {
+  max-width: 330px;
+  margin: 50px auto 0 auto;
+  padding: 1px 15px 15px 15px;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 5px;
+}
+
+input#email, input#password {
+  display: block;
+  width: 90%;
+  margin: 20px auto;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+input#email:focus, input#password:focus{
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+#login.form-signin input[type='submit'] {
+  display: block;
+  padding: 6px 12px;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+#login.form-signin input[type='submit']:focus,
+#login.form-signin input[type='submit']:active:focus,
+#login.form-signin input[type='submit'].active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+#login.form-signin input[type='submit']:hover,
+#login.form-signin input[type='submit']:focus {
+  color: #333;
+  text-decoration: none;
+}
+
+#login.form-signin input[type='submit'] {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+#login.form-signin input[type='submit']:hover,
+#login.form-signin input[type='submit']:focus,
+#login.form-signin input[type='submit']:active,
+#login.form-signin input[type='submit'].active {
+  color: #fff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+
+#login.form-signin input[type='submit']:active,
+#login.form-signin input[type='submit'].active {
+  background-image: none;
+}

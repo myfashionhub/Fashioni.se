@@ -1,0 +1,43 @@
+/*
+ *= require bootstrap
+ *= require bootstrap.min
+ *= require bootstrap-theme
+ *= require bootstrap-theme.min
+ *= require font-awesome
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  font-size: 16px;
+}
+
+button {
+  outline: none;
+}
+
+
+/* About page */
+
+.about {
+  width: 500px;
+  display: block;
+  margin: 15px auto 25px auto;
+  background-color: rgba(255,255,255, 0.88);
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+
+.about h3 {
+  font-family: 'Special Elite', cursive;
+  font-size: 25px;
+}
+
+.about p {
+  font-family: Helvetica, sans serif;
+  margin: 20px 0;
+}
+
+.container {
+  overflow: hidden;
+}

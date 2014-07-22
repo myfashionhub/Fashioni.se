@@ -1,0 +1,66 @@
+/* Item show page */
+
+.item_show h3 {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.item_show {
+  text-align: center;
+}
+
+.item_show form, .item_show input.button {
+  margin-bottom: 10px;
+}
+
+iframe {
+  width: 100%;
+  display: inline;
+  min-height: 650px;
+}
+
+
+
+/* Items search page */
+.container.search {
+  max-width:990px; /* 4 results per row */
+}
+
+.result {
+  margin: 15px 20px 0 20px;
+  width: 200px;
+  max-height: 300px;
+  float: left;
+}
+
+ul.search-result {
+  padding-left: 0;
+}
+
+.search-result li {
+  display: inline-block;
+  width: 200px;
+  margin: 10px 0 10px 20px;
+  vertical-align: top;
+
+}
+
+.search-result li p {
+  font-size: 16px;
+  color: #555;
+}
+
+.img-frame {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  display: block;
+
+  img {
+    max-height: 200px;
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+}

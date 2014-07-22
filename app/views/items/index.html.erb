@@ -8,9 +8,8 @@
 
     <ul class='search-result'>
       <% @items.each do |item| %>
-
         <li>
-          <div class="img_frame">
+          <div class="img-frame">
             <a href='<%= item.url %>' target='_blank'>
               <img src='<%= item.image_url %>' />
             </a>
@@ -23,7 +22,6 @@
           <button data='<%= item.id %>' class='copy-item'>Copy item</button>
 
         </li>
-
       <% end %>
     </ul>
 
