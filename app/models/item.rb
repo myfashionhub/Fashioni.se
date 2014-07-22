@@ -9,7 +9,8 @@ class Item < ActiveRecord::Base
     size     = "&fl=s#{size_code}"
     price    = "&fl=p10:#{max}"
     sort     = "&sort=#{sort}"
-    url += "products?pid=#{id}#{retailers}&fts=#{category}#{term}#{size}#{price}"
+    num_results = "&limit=20"
+    url += "products?pid=#{id}#{retailers}&fts=#{category}#{term}#{size}#{price}#{num_results}"
 
     raw_result = HTTParty.get(url)
     raw_result['products'].map do |item|
@@ -20,7 +21,7 @@ class Item < ActiveRecord::Base
        image_url:    item['image']['sizes'].fetch('IPhone')['url'],
        price:        item['priceLabel']
       }
-    end
+  end
 
   end
 
