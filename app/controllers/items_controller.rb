@@ -1,3 +1,5 @@
+require "#{Rails.root}/lib/tweet_module.rb"
+
 class ItemsController < ApplicationController
   def index
     @fashionista = Fashionista.find(params[:id])
@@ -10,6 +12,11 @@ class ItemsController < ApplicationController
 
   def new
     @fashionista = current_fashionista
+    tweets = Tweet.fetch
+    respond_to do |format|
+      format.html
+      format.json { render json: tweets.to_json }
+    end
   end
 
   def search

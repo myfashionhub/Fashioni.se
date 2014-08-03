@@ -25,13 +25,15 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'bcrypt', '~> 3.1.7'
 gem 'spring',        group: :development
-
-gem 'httparty', '~> 0.13.1' 
 gem 'rails_12factor', group: :production
-gem 'font-awesome-sass'
 
-group :development, :test do 
+group :development, :test do
   gem 'pry'
   gem 'pry-nav'
-  gem 'rspec-rails'  
+  gem 'rspec-rails'
 end
+
+
+gem 'font-awesome-sass'
+gem 'httparty', '~> 0.13.1'
+gem 'typhoeus'

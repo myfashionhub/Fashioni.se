@@ -3,11 +3,6 @@ class SessionsController < ApplicationController
   def index
   end
 
-  def timeout_in
-    10.minutes
-    redirect_to root_path, notice: "Session timeout. Please log back in"
-  end
-
   def create
     fashionista = Fashionista.find_by(email: params[:email])
 

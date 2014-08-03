@@ -18,4 +18,6 @@
 $(function() {
   saveItem();
   copyItem();
+
+  trendFeed();
 });
