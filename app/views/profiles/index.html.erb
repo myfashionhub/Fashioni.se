@@ -8,12 +8,12 @@
       <div class="profile">
       <img src="<%= @fashionista.pic_url %>" class="profile-pic" />
 
-      <h2>
-        <b><%= @fashionista.username %></b>
+      <h3>
+        <b><%= @fashionista.username %></b><br/>
         <a href="/profile/edit" class='edit'>
           Edit profile
         </a>
-      </h2>
+      </h3>
 
       <p>
         <i class="fa fa-quote-left"></i>
@@ -21,25 +21,21 @@
         <i class="fa fa-quote-right"></i>
       </p>
 
-      <table class='profile-grid'>
-        <tr>
-          <td><img src='/assets/hanger-icon.png' /></td>
-
-          <td>
-            <p><b><%= Style.find(@fashionista.style_id).name.capitalize %></b>
-            </p>
-          </td>
-        </tr>
-      </table>
+      <p>
+        <img src='/assets/hanger-icon.png' />
+        <b><%= Style.find(@fashionista.style_id).name.capitalize %></b>
+      </p>
 
     </div>
+
+
     <div class="closet">
-      <h3>
+      <h2>
         Your closet
         <a href="items/new" class='add'>
           Add items <i class="fa fa-plus"></i>
         </a>
-      </h3>
+      </h2>
 
       <% if @items.length > 0 %>
       <% @items.each do |item| %>

@@ -1,5 +1,4 @@
 function trendFeed() {
-  console.log('Fetching feed')
   $('.tweets').hide();
   $.ajax({
     url: '/items/new.json',
@@ -12,7 +11,8 @@ function trendFeed() {
         $('.tweets').append(tweetPara);
       });
       $('.tweets').toggle('slide');
-    }
+    },
+    error: function(data) { console.log(data); }
   });
 }
 

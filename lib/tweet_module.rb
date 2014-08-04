@@ -18,8 +18,12 @@ module Tweet
     hydra.run
     tweets = []
     requests.map do |request|
-      array = JSON.parse(request.response.response_body)
-      array.each { |tweet| tweets.push(tweet) }
+      if request.response.code != 200
+        tweets.push('Cannot fetch tweets at this time')
+      else
+        array = JSON.parse(request.response.response_body)
+        array.each { |tweet| tweets.push(tweet) }
+      end
     end
     tweets
   end
