@@ -1,17 +1,15 @@
 <div class="show">
-
   <%= render "nav" %>
-
 
   <div class="container">
 
     <div class="col-md-10">
-      <h2>
+    <div class="profile">
+      <img src="<%= @fashionista.pic_url %>" class="profile-pic" />
+
+      <h3>
         <b><%= @fashionista.username %>'s profile</b>
-      </h2>
-
-
-      <img src="<%= @fashionista.pic_url %>" class="profile-pic" /><br/>
+      </h3>
 
       <p>
         <i class="fa fa-quote-left"></i>
@@ -19,31 +17,30 @@
         <i class="fa fa-quote-right"></i>
       </p>
 
-      <table class='profile-grid'>
-        <tr>
-          <td><img src='/assets/hanger-icon.png' /></td>
+      <p><img src='/assets/hanger-icon.png' /></td>
+        <b><%= @style.name.capitalize %></b>
+      </p>
+    </div> <!-- profile -->
 
-          <td>
-            <p>
-              <b><%= Style.find(@fashionista.style_id).name.capitalize %></b>
-            </p>
-          </td>
-        </tr>
-      </table>
-
+    <div class="closet">
       <h3>
-        <a href="/fashionistas/<%= @fashionista.id %>/items">
-          View <%= @fashionista.username %>'s closet
-        </a>
+        <%= @fashionista.username %>'s closet
       </h3>
 
       <% @items.each do |item| %>
-        <img src="<%= item.image_url %>" class='thumbnail' />
+      <a class="other" data="<%= item.id %>">
+        <img style="background-image: url(<%= item.image_url %>)" />
+        <div>
+          <%= item.description %><br/>
+          <span>Click to copy <i class="fa fa-plus"></i></span>
+        </div>
+      </a>
       <% end %>
+    </div> <!-- closet -->
 
-      <div class="row"></div>
-    </div>
+    <div class="row"></div>
+    </div> <!-- col md 10 -->
 
-  </div>
+  </div> <!-- container -->
 
-</div>
+</div> <!-- show -->

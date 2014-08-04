@@ -5,10 +5,11 @@ class ProfilesController < ApplicationController
     @fashionista = current_fashionista
     @style = Style.find(@fashionista.style_id)
     saves  = Save.where(fashionista_id: @fashionista.id)
-    @items = saves.map do |save|
+
+    @items = saves.to_a.sort_by{ |save| save.created_at }.reverse
+                  .map do |save|
       Item.find(save.item_id)
     end
-    @items.sort_by{ |item| item.created_at }
   end
 
   def edit

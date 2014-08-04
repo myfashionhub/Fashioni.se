@@ -5,7 +5,7 @@
   <div class="container">
     <div class="col-md-10">
 
-      <div class="profile">
+    <div class="profile">
       <img src="<%= @fashionista.pic_url %>" class="profile-pic" />
 
       <h3>
@@ -25,8 +25,7 @@
         <img src='/assets/hanger-icon.png' />
         <b><%= @style.name.capitalize %></b>
       </p>
-
-    </div>
+    </div> <!-- profile -->
 
 
     <div class="closet">
@@ -42,7 +41,7 @@
           <a href='/items/<%= item.id %>'>
             <img style="background-image: url(<%= item.image_url %>)" />
             <div>
-              <%=item.description%>
+              <%= item.description %>
             </div>
           </a>
         <% end %>

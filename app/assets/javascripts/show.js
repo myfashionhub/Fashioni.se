@@ -1,7 +1,6 @@
 function itemHover() {
   $('.closet a').mouseover(function(e) {
     var text = $(e.target).parent().find('div');
-    console.log(text.html());
     text.css('visibility', 'visible');
   });
 
