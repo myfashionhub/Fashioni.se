@@ -1,3 +1,5 @@
+@import 'variables';
+
 /* Fashionista item search form */
 .search-form {
   margin-top: 20px;
@@ -29,7 +31,7 @@ input#search_term {
 .search-criteria {
   width: 580px;
   float: left;
-  margin-top: 4em;
+  margin: 4em 1em 0 1em;
   h2 {
     margin: 0 0 1em 0;
   }
@@ -39,8 +41,9 @@ input#search_term {
   float: right;
   width: 400px;
   height: 400px;
-  margin: 4.5em 10% 0 2em;
+  margin: 4em 8% 2em 1em;
   border-radius: 6px;
+  border: 1px solid #ebebeb;
   background-color: #fff;
   h3 {
     margin: 0;
@@ -49,13 +52,25 @@ input#search_term {
     background-color: #9FB83B;
   }
   .tweets {
-    height: 95%;
+    height: 380px;
     padding: 1em 1em 0.5em 1em;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   p {
-    font-size: 1em;
-    font-family: 'Helvetica'
+    font-size: .95em;
+    font-family: 'Helvetica';
+    color: #444;
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .feed, .search-criteria {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .feed {
+    margin-top: 1em;
+  }
+}

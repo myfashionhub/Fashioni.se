@@ -1,4 +1,5 @@
 function trendFeed() {
+  console.log('Fetching feed')
   $('.tweets').hide();
   $.ajax({
     url: '/items/new.json',

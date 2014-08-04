@@ -18,7 +18,7 @@
 .profile {
   margin: 4em 0 0 0;
   h2 {
-    margin-top: 0;
+    margin: 0.2em 0 .5em 0;
   }
 }
 
@@ -41,43 +41,6 @@ p {
   font-size: 18px;
 }
 
-button,
-.new_form .confirm input, /* edit/new form button */
-.edit_form .confirm input,
-.search-form .confirm input {
-  color: #333;
-  background-image: -webkit-linear-gradient(top, #ebcccc 0%, #cc6a84 100%);
-  background-image:         linear-gradient(to bottom, #ebcccc 0%, #cc6a84 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff2d6ca2', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  /* border-color: #f3e0e0; */
-  padding: 8px 12px;
-  font-size: 16px;
-  line-height: 1.33;
-  border-radius: 6px;
-}
-
-button:hover, button:focus
-.confirm input[type='submit']:hover, /* not working */
-.confirm input[type='submit']:focus {
-  background-color: #cc6a84;
-  background-position: 0 -15px;
-}
-button:active, button.active
-.confirm input[type='submit']:active {
-  background-color: #cc6a84;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-}
-
-button,
-.confirm input[type='submit'] {
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075);
-}
-
 a.edit {
   color: #D6521E;
   font-family: 'Helvetica';
@@ -91,7 +54,7 @@ a.edit {
 
 a.add {
   margin: 0 0 0 1em;
-  color: #0071E3;
+  color: #23A897;
   font-size: .8em;
   &:hover {
     color: #666;

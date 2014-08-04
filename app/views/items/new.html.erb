@@ -4,11 +4,6 @@
 
   <div class="container">
 
-  <div class="feed">
-    <h3>What's trending:</h3>
-    <div class="tweets"></div>
-  </div>
-
   <div class="search-criteria">
     <h2>Get customized search results:</h2>
 
@@ -23,10 +18,9 @@
           </td>
         </tr>
 
-
         <tr>
           <td colspan='2'>
-            <%= label_tag :brand, "Check if searching for a specific brand" %>
+            <%= label_tag :brand, "Check if searching for a specific brand or all brands" %>
             &nbsp;
             <%= check_box_tag :brand, true %>
           </td>
@@ -79,5 +73,11 @@
     <% end %>
   </div> <!-- criteria -->
 
+
+  <div class="feed">
+    <h3>What's trending:</h3>
+    <div class="tweets"></div>
+  </div>
+
   </div> <!-- container -->
-</div> <!-- how -->
+</div> <!-- show -->
