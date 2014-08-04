@@ -1,7 +1,7 @@
 <div class="show">
 
   <div class="nav">
-    <a href="/profiles">
+    <a href="/profile">
       Back to profile
     </a>
   </div>
@@ -16,14 +16,12 @@
         &nbsp; <%= @item.price %>
       </h3>
 
-
-
       <!--img src='<%= @item.image_url %>' /-->
 
-      <form action='/profiles/items/<%= @item.id %>' method='post'>
+      <form action='/profiles/items/<%= @item.id %>' method='post' class='remove'>
         <%= token_tag %>
         <input type='hidden' name='_method' value='delete'>
-        <input type='submit' value='Remove from closet' class='button'>
+        <a>Remove from closet <i class='fa fa-times'></i></a>
       </form>
 
       <iframe src="<%= @item.url %>" seamless></iframe>

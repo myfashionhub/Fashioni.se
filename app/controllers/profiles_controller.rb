@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
 
   def index
     @fashionista = current_fashionista
+    @style = Style.find(@fashionista.style_id)
     saves  = Save.where(fashionista_id: @fashionista.id)
     @items = saves.map do |save|
       Item.find(save.item_id)

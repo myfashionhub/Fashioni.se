@@ -1,16 +1,30 @@
-/* Item show page */
+@import 'variables';
 
-.item-show h3 {
-  margin-top: 60px;
+/* ITEM SHOW PAGE */
+.item-show {
   text-align: center;
+  h3 {
+    margin-top: 60px;
+  }
 }
 
 .item-show {
-  text-align: center;
-}
-
-.item-show form, .item-show input.button {
-  margin-bottom: 10px;
+  form {
+    margin-bottom: 1em;
+  }
+  a {
+    color: $orange;
+    &:hover {
+      color: $med-orange;
+    }
+  }
+  .remove a {
+    color: #7f7f7f;
+    font-weight: bold;
+    &:hover {
+      color: #9C9C9C;
+    }
+  }
 }
 
 iframe {

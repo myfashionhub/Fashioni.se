@@ -45,6 +45,7 @@ input#search_term {
   border-radius: 6px;
   border: 1px solid #ebebeb;
   background-color: #fff;
+  overflow: hidden;
   h3 {
     margin: 0;
     padding: .5em;
@@ -52,7 +53,7 @@ input#search_term {
     background-color: #9FB83B;
   }
   .tweets {
-    height: 380px;
+    height: 360px;
     padding: 1em 1em 0.5em 1em;
     overflow-y: auto;
   }

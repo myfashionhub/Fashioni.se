@@ -6,6 +6,7 @@
 $(function() {
   saveItem();
   copyItem();
+  removeItem();
 
   trendFeed();
 });

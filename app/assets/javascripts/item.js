@@ -1,3 +1,7 @@
+function searchItems() {
+
+}
+
 function saveItem() {
   $('.search-result button').click(function(e) {
     var shopstyle_id = $(e.target).attr('data');
@@ -32,4 +36,11 @@ function copyItem() {
       success: successfulSave
     });
   });
+}
+
+function removeItem() {
+  $('.remove a').click(function(e) {
+    var form = $(e.target).parent();
+    form.submit();
+  })
 }

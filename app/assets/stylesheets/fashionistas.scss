@@ -1,4 +1,6 @@
-/* Fashionista show page */
+@import 'variables';
+
+/* FASHIONISTA PROFILE/SHOW PAGE */
 .show {
   background-image: url('/assets/pattern.png');
   min-height: 100%;
@@ -38,7 +40,7 @@
     border: 2px solid #ccc;
   }
   a.edit {
-    color: #D6521E;
+    color: $orange;
     font-family: 'Helvetica';
     font-size: .5em;
     text-transform: uppercase;
@@ -46,18 +48,6 @@
     &:hover {
       color: #333;
     }
-  }
-  .profile-grid img {
-    width: 50px;
-  }
-
-  .profile-grid td:nth-child(odd) {
-    width: 65px;
-  }
-
-  .profile-grid td:nth-child(even) p {
-    margin-bottom: 0;
-    vertical-align: bottom;
   }
 }
 
@@ -70,7 +60,7 @@
   }
   a.add {
     margin: 0 0 0 1em;
-    color: #23A897;
+    color: $teal;
     font-size: .7em;
     text-transform: uppercase;
     &:hover {
@@ -84,11 +74,20 @@
   }
 }
 
+@media only screen and (max-width: 1000px) {
+  .profile, .closet {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .profile {
+    width: 80%;
+    .profile-pic {
+      margin: 0 1em;
+    }
+  }
+  .closet {
+    width: 80%;
 
-
-
-
-/* Fashionista profile page */
-img {
-
+  }
 }
