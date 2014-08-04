@@ -3,13 +3,13 @@
   <%= render 'fashionistas/nav' %>
 
   <div class="container">
+    <%= render 'layouts/tweets' %>
 
+  <div class="criteria">
     <h2>Get customized search results:</h2>
 
-    <div class="tweets"></div>
-
     <%= form_tag '/items/search', method: :get do %>
-      <table class='search_form'>
+      <table class='search-form'>
         <tr>
           <td>
             <p><%= label_tag :search_term, "Search term" %></p>
@@ -73,6 +73,7 @@
 
       </table>
     <% end %>
-
   </div>
-</div>
+
+  </div> <!-- container -->
+</div> <!--s how -->

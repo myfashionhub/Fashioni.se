@@ -37,3 +37,4 @@ end
 gem 'font-awesome-sass'
 gem 'httparty', '~> 0.13.1'
 gem 'typhoeus'
+gem 'underscore-rails'

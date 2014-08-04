@@ -1,7 +1,8 @@
+
 /* Fashionista new & edit form */
 .new_form,
 .edit_form,
-.search_form {
+.search-form {
   margin: 0 auto;
   width: 480px;
 }
@@ -13,7 +14,7 @@
 
 .new_form td label,
 .edit_form td label,
-.search_form td label {
+.search-form td label {
   vertical-align: baseline;
   margin: 0;
   padding-top: 7px;
@@ -21,7 +22,7 @@
 
 .new_form td input,
 .edit_form td input,
-.search_form td input {
+.search-form td input {
   vertical-align: top;
 }
 
@@ -42,29 +43,29 @@ form.button {
 }
 
 /* Fashionista item search form */
-.search_form {
+.search-form {
   margin-top: 20px;
 }
 
-.search_form td {
+.search-form td {
   padding-bottom: 16px; /* spacing between rows */
 }
-.search_form td:nth-child(odd) label {
+.search-form td:nth-child(odd) label {
   font-weight: normal;
 }
-.search_form td label {
+.search-form td label {
   vertical-align: bottom;
 }
 input#search_term {
   width: 80%; /* search input */
 }
-.search_form input[type='radio'],
-.search_form input[type='checkbox'] {
+.search-form input[type='radio'],
+.search-form input[type='checkbox'] {
   vertical-align: middle;
   margin-bottom: 5px;
 }
 
-.search_form .confirm input {
+.search-form .confirm input {
   display: block;
   margin: 0 auto;
 }
@@ -135,7 +136,7 @@ p {
 button,
 .new_form .confirm input, /* edit/new form button */
 .edit_form .confirm input,
-.search_form .confirm input {
+.search-form .confirm input {
   color: #333;
   background-image: -webkit-linear-gradient(top, #ebcccc 0%, #cc6a84 100%);
   background-image:         linear-gradient(to bottom, #ebcccc 0%, #cc6a84 100%);

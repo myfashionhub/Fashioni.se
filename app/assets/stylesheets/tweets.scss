@@ -1,0 +1,20 @@
+.feed {
+  float: right;
+  width: 400px;
+  min-height: 30em;
+  margin: 2em;
+  border-radius: 10px;
+  background-color: #fff;
+  h3 {
+    margin: 0;
+    padding: .5em;
+    color: #fff;
+    background-color: #9FB83B;
+  }
+  .tweets {
+    padding: 1em;
+  }
+  p {
+    font-size: .95em;
+  }
+}
