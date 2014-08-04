@@ -38,11 +38,14 @@
       </h2>
 
       <% if @items.length > 0 %>
-      <% @items.each do |item| %>
-        <a href='/items/<%= item.id %>'>
-          <img src="<%= item.image_url %>" class='thumbnail' />
-        </a>
-      <% end %>
+        <% @items.each do |item| %>
+          <a href='/items/<%= item.id %>'>
+            <img style="background-image: url(<%= item.image_url %>)" />
+            <div>
+              <%=item.description%>
+            </div>
+          </a>
+        <% end %>
       <% end %>
 
       <div class="row"></div>

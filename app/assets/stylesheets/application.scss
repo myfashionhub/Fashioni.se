@@ -8,14 +8,12 @@
  *= require_self
  */
 
+@import 'variables';
+
 body {
   font-size: 16px;
+  color: $text-color;
 }
-
-button {
-  outline: none;
-}
-
 
 /* About page */
 
@@ -56,4 +54,21 @@ h2, .show h3 {
 
 p {
   font-family: 'Sanchez', serif;
+}
+
+.show {
+  background-image: url('/assets/pattern.png');
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  background-attachment: scroll;
+}
+
+.col-md-10, .col-md-8,
+.col-md-6 {
+  min-height: 100%;
+  margin: 0 auto;
+  display: block;
+  float: none;
+  overflow: visible;
 }

@@ -1,23 +1,6 @@
 @import 'variables';
 
 /* FASHIONISTA PROFILE/SHOW PAGE */
-.show {
-  background-image: url('/assets/pattern.png');
-  min-height: 100%;
-  width: 100%;
-  position: absolute;
-  background-attachment: scroll;
-}
-
-.col-md-10, .col-md-8,
-.col-md-6 {
-  min-height: 100%;
-  margin: 0 auto;
-  display: block;
-  float: none;
-  overflow: auto;
-}
-
 .profile {
   float: right;
   width: 240px;
@@ -53,41 +36,61 @@
 
 .closet {
   float: left;
-  width: 65%;
+  width: 70%;
   margin: 4em 1em 1em 0;
   h2 {
     margin: 0 0 .5em 0;
   }
   a.add {
     margin: 0 0 0 1em;
+    float: none;
     color: $teal;
-    font-size: .7em;
+    font-family: Helvetica;
+    font-size: .62em;
     text-transform: uppercase;
-    &:hover {
-      color: #666;
-    }
+    &:hover { color: #666; }
   }
-  .thumbnail {
+}
+
+/* CLOSET ITEMS */
+.closet {
+  a {
+    overflow: hidden;
     height: 150px;
+    width: 150px;
     float: left;
     margin: 0 8px 10px 0;
+    color: #fff;
+  }
+  img {
+    height: 150px;
+    width: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+  }
+  div {
+    visibility: hidden;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    padding: .5em;
+    top: -150px;
+    background-color: rgba(0,0,0,.5);
   }
 }
 
 @media only screen and (max-width: 1000px) {
   .profile, .closet {
     float: none;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
   .profile {
-    width: 80%;
     .profile-pic {
       margin: 0 1em;
     }
-  }
-  .closet {
-    width: 80%;
-
   }
 }

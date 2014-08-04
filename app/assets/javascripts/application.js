@@ -8,5 +8,7 @@ $(function() {
   copyItem();
   removeItem();
 
+  itemHover();
+
   trendFeed();
 });
