@@ -1,15 +1,15 @@
 /* Item show page */
 
-.item_show h3 {
+.item-show h3 {
   margin-top: 60px;
   text-align: center;
 }
 
-.item_show {
+.item-show {
   text-align: center;
 }
 
-.item_show form, .item_show input.button {
+.item-show form, .item-show input.button {
   margin-bottom: 10px;
 }
 
@@ -17,11 +17,12 @@ iframe {
   width: 100%;
   display: inline;
   min-height: 650px;
+  margin: 0 0 3em 0;
 }
 
 
 
-/* Items search page */
+/* Items search results */
 .container.search {
   max-width:990px; /* 4 results per row */
 }

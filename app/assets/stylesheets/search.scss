@@ -1,0 +1,61 @@
+/* Fashionista item search form */
+.search-form {
+  margin-top: 20px;
+}
+
+.search-form td {
+  padding-bottom: 16px; /* spacing between rows */
+}
+.search-form td:nth-child(odd) label {
+  font-weight: normal;
+}
+.search-form td label {
+  vertical-align: bottom;
+}
+input#search_term {
+  width: 80%; /* search input */
+}
+.search-form input[type='radio'],
+.search-form input[type='checkbox'] {
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+.search-form .confirm input {
+  display: block;
+  margin: 0 auto;
+}
+
+.search-criteria {
+  width: 580px;
+  float: left;
+  margin-top: 4em;
+  h2 {
+    margin: 0 0 1em 0;
+  }
+}
+
+.feed {
+  float: right;
+  width: 400px;
+  height: 400px;
+  margin: 4.5em 10% 0 2em;
+  border-radius: 6px;
+  background-color: #fff;
+  h3 {
+    margin: 0;
+    padding: .5em;
+    color: #fff;
+    background-color: #9FB83B;
+  }
+  .tweets {
+    height: 95%;
+    padding: 1em 1em 0.5em 1em;
+    overflow-y: scroll;
+  }
+  p {
+    font-size: 1em;
+    font-family: 'Helvetica'
+  }
+}
+

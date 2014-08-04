@@ -4,12 +4,16 @@
 
   <div class="container">
     <div class="col-md-10">
+
+      <div class="profile">
+      <img src="<%= @fashionista.pic_url %>" class="profile-pic" />
+
       <h2>
         <b><%= @fashionista.username %></b>
+        <a href="/profile/edit" class='edit'>
+          Edit profile
+        </a>
       </h2>
-
-
-      <img src="<%= @fashionista.pic_url %>" class="profile_pic" /><br/>
 
       <p>
         <i class="fa fa-quote-left"></i>
@@ -17,7 +21,7 @@
         <i class="fa fa-quote-right"></i>
       </p>
 
-      <table class='profile_grid'>
+      <table class='profile-grid'>
         <tr>
           <td><img src='/assets/hanger-icon.png' /></td>
 
@@ -28,16 +32,15 @@
         </tr>
       </table>
 
-      <a href="/profile/edit" class='edit'>
-        <button>Edit profile</button>
-      </a>
+    </div>
+    <div class="closet">
+      <h3>
+        Your closet
+        <a href="items/new" class='add'>
+          Add items <i class="fa fa-plus"></i>
+        </a>
+      </h3>
 
-      <a href="items/new" class='edit'>
-        <button>Search for items</button>
-      </a>
-
-
-      <h3>Your closet</h3>
       <% if @items.length > 0 %>
       <% @items.each do |item| %>
         <a href='/items/<%= item.id %>'>
@@ -49,6 +52,8 @@
       <div class="row"></div>
     </div>
 
-  </div>
+    </div> <!-- col md 10 -->
 
-</div>
+  </div> <!-- container -->
+
+</div> <!-- show -->
