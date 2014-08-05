@@ -12,20 +12,20 @@
       </h3>
 
       <p>
-        <i class="fa fa-quote-left"></i>
+        <i class="fa fa-comment-o"></i>
         <b><%= @fashionista.tagline %></b>
-        <i class="fa fa-quote-right"></i>
       </p>
 
-      <p><img src='/assets/hanger-icon.png' /></td>
+      <p>
+        <i class="fa fa-heart-o"></i>
         <b><%= @style.name.capitalize %></b>
       </p>
     </div> <!-- profile -->
 
     <div class="closet">
-      <h3>
+      <h2>
         <%= @fashionista.username %>'s closet
-      </h3>
+      </h2>
 
       <% @items.each do |item| %>
       <a class="other" data="<%= item.id %>">
