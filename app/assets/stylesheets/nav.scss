@@ -19,11 +19,12 @@
   z-index: 1;
   position: absolute;
   margin: 5px 0 0 56%; /* float right */
-  min-width: 365px;
+  min-width: 410px;
   font-size: 1em;
   text-transform: uppercase;
   text-align: center;
   a {
+    display: inline;
     background-color: $med-orange;
     padding: 8px 12px;
     color: #fff;
@@ -33,8 +34,26 @@
   }
 }
 
-@media only screen and (max-width: 850px) {
+#mycloset {
+  margin: 0;
+  display: inline;
+  a { padding: 8px 12px; }
+}
+.dropdown {
+  display: none;
+  width: 8.5em;
+  margin: 5px 0 0 0;
+  right: -253px;
+  position: relative;
+  a {
+    display: block;
+    padding: 8px 0;
+    font-size: .95em;
+  }
+}
+
+@media only screen and (max-width: 980px) {
   .nav {
-    margin-left: 40%;
+    margin-left: 50%;
   }
 }

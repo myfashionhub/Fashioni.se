@@ -9,6 +9,7 @@ $(function() {
   removeItem();
 
   itemHover();
+  dropdownMenu();
 
   trendFeed();
 });

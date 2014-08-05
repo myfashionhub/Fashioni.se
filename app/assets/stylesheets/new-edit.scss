@@ -1,6 +1,11 @@
 @import 'variables';
 
 /* Fashionista new & edit form */
+.col-md-8 {
+  h2 {
+    margin: 2.5em 0 1em 0;
+  }
+}
 .new_form,
 .edit_form,
 .search-form {

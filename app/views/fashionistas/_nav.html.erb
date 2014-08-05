@@ -1,8 +1,16 @@
 <div class="nav">
   <% if current_fashionista %>
-    <%= link_to "My Closet", '/profile', method: :get %><%= link_to "Log out", sessions_path, method: :delete %><%= link_to "Home", '/fashionistas', method: :get %><%= link_to "About", '/about', method: :get %>
+    <%= link_to "Fashionistas", '/fashionistas', method: :get %><%= link_to "About Us", '/about', method: :get %><div id='mycloset'><a href='/profile'>My closet</a>
+      <div class="dropdown">
+        <a href='profile/edit'>Edit profile</a>
+        <a href='logout'>Log out</a>
+      </div>
+    </div>
+
 
   <% else %>
-    <%= link_to "Log in/Sign up", root_path, method: :get %><%= link_to "About", '/about', method: :get %><%= link_to "Homepage", '/fashionistas', method: :get %>
+
+    <a href="/">Log in
+      <a href="/fashionistas/new">Sign up</a></a><%= link_to "About Us", '/about', method: :get %><%= link_to "Fashionistas", '/fashionistas', method: :get %>
   <% end %>
 </div>
