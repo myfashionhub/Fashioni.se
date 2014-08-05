@@ -3,7 +3,7 @@ function searchItems() {
 }
 
 function saveItem() {
-  $('.search-result button').click(function(e) {
+  $('.save-item').click(function(e) {
     var shopstyle_id = $(e.target).attr('data');
     $.ajax({
       url: '/items/save',

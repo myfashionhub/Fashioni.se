@@ -21,7 +21,9 @@
             </a> <%= item[:price] %>
           </p>
 
-          <button data="<%= item[:shopstyle_id] %>" class='save-item'>Save to closet</button>
+          <button data="<%= item[:shopstyle_id] %>" class='save-item'>
+            <i class="fa fa-bookmark"></i> Save to closet
+          </button>
         </li>
 
       <% end %>
