@@ -39,6 +39,7 @@
   float: left;
   width: 70%;
   margin: 4em 1em 1em 0;
+  overflow: auto;
   h2 {
     margin: 0 0 .5em 0;
   }
@@ -66,9 +67,8 @@
   img {
     height: 150px;
     width: 150px;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
     background-color: #fff;
   }
   div {
@@ -82,18 +82,28 @@
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .col-md-10 {
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .profile, .closet {
     float: none;
-    width: 80%;
-    margin-top: 2em;
     margin-left: auto;
     margin-right: auto;
   }
   .profile {
+    width: 70%;
+    margin-top: 3.5em;
     .profile-pic {
       margin: 0 1em;
     }
+  }
+  .closet {
+    margin-top: 2em;
+    width: 95%;
   }
 }
 

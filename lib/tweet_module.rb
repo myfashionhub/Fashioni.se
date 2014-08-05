@@ -22,12 +22,16 @@ module Tweet
         tweets.push('Cannot fetch tweets at this time')
       else
         array = JSON.parse(request.response.response_body)
-        array.each { |tweet| tweets.push(tweet) }
+        array.each { |tweet|
+          handles = tweet.scan(/@\w+/)
+          links   = tweet.scan(/http:\/\/t.co\/\w+/);
+          handles.each { |handle| tweet.gsub!(handle, "<span>#{handle}</span>") }
+          links.each { |link| tweet.gsub!(link, "<a href='"+link+"' target='_blank'>"+link+"</a>") }
+          tweets.push(tweet)
+        }
+
       end
     end
     tweets
   end
 end
-
-
-

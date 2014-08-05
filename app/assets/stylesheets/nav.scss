@@ -1,3 +1,5 @@
+@import 'variables';
+
 /* Navigation & alert */
 
 .alert {
@@ -16,15 +18,23 @@
 .nav {
   z-index: 1;
   position: absolute;
-  background: transparent;
-
-  margin: 5px 0 0 54%; /* float right */
-  padding: 5px;
-  font-size: 15px;
+  margin: 5px 0 0 56%; /* float right */
+  min-width: 365px;
+  font-size: 1em;
   text-transform: uppercase;
-  text-align: right;
+  text-align: center;
+  a {
+    background-color: $med-orange;
+    padding: 8px 12px;
+    color: #fff;
+    &:hover {
+      background-color: $orange;
+    }
+  }
 }
 
-.nav a {
-  color: #444;
+@media only screen and (max-width: 850px) {
+  .nav {
+    margin-left: 40%;
+  }
 }
