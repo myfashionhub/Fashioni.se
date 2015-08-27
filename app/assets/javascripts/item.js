@@ -1,7 +1,3 @@
-function searchItems() {
-
-}
-
 function saveItem() {
   $('.save-item').click(function(e) {
     var shopstyle_id = $(e.target).attr('data');
