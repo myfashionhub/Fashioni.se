@@ -3,7 +3,7 @@
 A bookmarking tool for discovering and keeping track of your coveted fashion items.
 Fashioni.se customizes search results based on your declared style and lets you filter items by price, popularity and/or recency. Peak inside other fashionistas' closets and steal their style. **[View app](http://fashionize.herokuapp.com/)**
 
-![Fashioni.se homepage](http://nessanguyen.comze.com/file/screenshot.png "Fashioni.se homepage")
+![Fashioni.se homepage](http://www.nessanguyen.com/images/portfolio-fashionize.png "Fashioni.se homepage")
 
 ### Getting started
 - Clone the repository, `bundle install`
