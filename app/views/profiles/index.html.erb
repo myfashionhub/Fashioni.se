@@ -37,9 +37,9 @@
 
       <% if @items.length > 0 %>
         <% @items.each do |item| %>
-          <a href='/items/<%= item.id %>'>
-            <img style="background-image: url(<%= item.image_url %>)" />
-            <div>
+          <a href='/items/<%= item.id %>' class='item'>
+            <div class='image' style="background-image: url(<%= item.image_url %>)"></div>
+            <div class='overlay'>
               <%= item.description %>
             </div>
           </a>

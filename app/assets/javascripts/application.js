@@ -8,7 +8,6 @@ $(function() {
   copyItem();
   removeItem();
 
-  itemHover();
   dropdownMenu();
 
   trendFeed();

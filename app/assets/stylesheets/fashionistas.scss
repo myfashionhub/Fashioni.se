@@ -52,7 +52,7 @@
 
 /* CLOSET ITEMS */
 .closet {
-  a {
+  a.item {
     overflow: hidden;
     height: 150px;
     width: 150px;
@@ -60,14 +60,16 @@
     margin: 0 8px 10px 0;
     color: #333;
   }
-  img {
-    height: 150px;
-    width: 150px;
+
+  div.image {
+    height: 100%;
+    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #fff;
   }
-  div {
+
+  div.overlay {
     visibility: hidden;
     width: 150px;
     height: 150px;
@@ -75,6 +77,14 @@
     padding: .5em;
     top: -150px;
     background-color: rgba(255,255,255,.8);
+  }
+}
+
+.closet {
+  a.item:hover {
+    div.overlay {
+      visibility: visible;
+    }
   }
 }
 

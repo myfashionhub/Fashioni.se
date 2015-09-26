@@ -29,8 +29,8 @@
 
       <% @items.each do |item| %>
       <a class="other" data="<%= item.id %>">
-        <img style="background-image: url(<%= item.image_url %>)" />
-        <div>
+        <div style="background-image: url(<%= item.image_url %>)" class='image' ></div>
+        <div class='overlay'>
           <%= item.description %><br/>
           <span>Click to copy <i class="fa fa-plus"></i></span>
         </div>
