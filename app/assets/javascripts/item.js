@@ -26,8 +26,9 @@ function successfulSave(data) {
 
 
 function copyItem() {
-  $('.other').click(function(e) {
-    var item_id = $(e.target).parent().attr('data');
+  $('.item.copy').click(function(e) {
+    var item_id = $(e.target).parent().first().attr('data');
+
     $.ajax({
       url: '/items/copy',
       method: 'post',
