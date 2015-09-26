@@ -3,7 +3,6 @@ class Fashionista < ActiveRecord::Base
   has_and_belongs_to_many :items
   belongs_to :style
 
-  validates :username, presence: true
   validates :email, presence: true, uniqueness: true,
     email: true
   validates :password, length: {within: 6..16, wrong_length: "Password length does not match requirement"}, :on => :create
@@ -53,6 +52,7 @@ class Fashionista < ActiveRecord::Base
       self.tagline
     end
 
+    self.username = self.email.split('@').first
   end
 
 
