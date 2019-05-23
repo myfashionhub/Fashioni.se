@@ -10,7 +10,6 @@ gem 'typhoeus'
 
 # Frontend
 gem 'jquery-rails'
-gem 'font-awesome-sass'
 gem 'sass-rails', '5.0.7'
 gem 'uglifier', '>= 1.3.0' # Compress assets
 gem 'underscore-rails'
