@@ -16,6 +16,7 @@ module Tweet
       request
     end
     hydra.run
+
     tweets = []
     requests.map do |request|
       if request.response.code != 200
