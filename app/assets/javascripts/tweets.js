@@ -9,25 +9,25 @@ function trendFeed() {
   });
 }
 
-const getRandomIdx = (max) => {
+var getRandomIdx = function(max) {
   return Math.floor(Math.random() * max);
 };
 
 function displayFeed(data) {
-  const numTweets = 5;
-  const tweetIndexes = [];
+  var numTweets = 5;
+  var tweetIndexes = [];
 
   // Get 5 random tweets from array
   while (tweetIndexes.length < numTweets) {
-    const randomIdx = getRandomIdx(data.length);
+    var randomIdx = getRandomIdx(data.length);
     if (tweetIndexes.indexOf(randomIdx) == -1) {
       tweetIndexes.push(randomIdx);
     }
   }
 
-  tweetIndexes.forEach((index) => {
-    const tweet = data[index];
-    const tweetEl = $('<p>').append(tweet);
+  tweetIndexes.forEach(function(index) {
+    var tweet = data[index];
+    var tweetEl = $('<p>').append(tweet);
     $('.tweets').append(tweetEl);
   });
 
