@@ -4,6 +4,7 @@ class Item < ActiveRecord::Base
 
   def self.search_api(term, category, retailers, size_code, max, sort)
     url      = "http://api.shopstyle.com/api/v2/"
+    # TODO: Find a new product API
     id = ENV.fetch('SHOPSTYLE_ID')
     term     = term.gsub(' ','+')
     size     = "&fl=s#{size_code}"

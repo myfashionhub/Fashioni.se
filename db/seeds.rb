@@ -1,15 +1,15 @@
 styles = [
-  'women: trendy',
-  'women: business',
-  'women: active',
-  'women: sexy',
-  'women: vintage',
-  'women: designer',
+  'men: active',
   'men: business',
-  'men: active'
+
+  'women: active',
+  'women: business',
+  'women: designer',
+  'women: sexy',
+  'women: trendy',
+  'women: vintage',
 ]
 
 styles.each do |style|
-  Style.create(name: style)
+  Style.find_or_create_by(name: style)
 end
-
