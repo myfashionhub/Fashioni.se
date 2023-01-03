@@ -5,7 +5,7 @@ gem 'rails', '5.1.0'
 gem 'pg', '~> 0.18'
 
 gem 'bcrypt', '~> 3.1.7'
-gem 'httparty', '~> 0.13.1'
+gem 'httparty', '~> 0.21.0'
 gem 'typhoeus'
 
 # Frontend
